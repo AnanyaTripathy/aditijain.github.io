@@ -1,762 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditi Jain — Psychologist | Trauma-Informed Therapy</title>
-<meta name="description" content="Aditi Jain is a psychologist offering warm, trauma-informed therapy online. Specialising in anxiety, identity, relationships, and emotional wellbeing. Book a session today.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aditi Jain – Psychologist</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lav50:#f5f3ff;--lav100:#ede9fe;--lav200:#ddd6fe;--lav300:#c4b5fd;
+  --lav400:#a78bfa;--lav500:#8b5cf6;--lav600:#7c3aed;
+  --lil50:#faf5ff;--lil100:#f3e8ff;--lil200:#e9d5ff;--lil400:#c084fc;--lil600:#9333ea;
+  --mauve:#6b21a8;
+  --dark:#2d1b4e;--mid:#4c3a6b;--muted:#7c6b9e;
+  --cream:#fefdfb;--white:#fff;
+  --border:rgba(167,139,250,0.18);
+  --r-sm:12px;--r-md:16px;--r-lg:20px;--r-xl:28px;--r-pill:50px;
+  --shadow:0 4px 24px rgba(139,92,246,0.09);
+  --shadow-hover:0 10px 36px rgba(139,92,246,0.16);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--dark);line-height:1.7;font-size:16px;overflow-x:hidden}
 
-  :root {
-    --lavender-50: #f5f3ff;
-    --lavender-100: #ede9fe;
-    --lavender-200: #ddd6fe;
-    --lavender-300: #c4b5fd;
-    --lavender-400: #a78bfa;
-    --lavender-500: #8b5cf6;
-    --lilac-soft: #e8e0f5;
-    --lilac-mid: #c9b8e8;
-    --lilac-deep: #9b7ec8;
-    --rose-soft: #fdf2f8;
-    --rose-warm: #fde8f0;
-    --peach-soft: #fff3ed;
-    --amber-soft: #fffbeb;
-    --sage-soft: #f0f7f4;
-    --cream: #faf9f7;
-    --warm-white: #fffefb;
-    --text-dark: #2d2438;
-    --text-mid: #5a4e6e;
-    --text-muted: #8b7fa0;
-    --gold: #d4a843;
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'DM Sans', system-ui, sans-serif;
-    --radius-lg: 20px;
-    --radius-xl: 32px;
-    --radius-pill: 100px;
-    --shadow-soft: 0 4px 24px rgba(155,126,200,0.12);
-    --shadow-card: 0 8px 40px rgba(45,36,56,0.08);
-  }
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(254,253,251,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav-logo{font-family:'Lora',serif;font-size:1.05rem;color:var(--mauve);text-decoration:none;font-weight:500;white-space:nowrap}
+.nav-links{display:flex;gap:clamp(.8rem,2vw,1.8rem);list-style:none;align-items:center}
+.nav-links a{font-size:.88rem;color:var(--mid);text-decoration:none;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--mauve)}
+.nav-cta{background:linear-gradient(135deg,var(--lav400),var(--lil400));color:#fff!important;padding:.4rem 1.15rem;border-radius:var(--r-pill);font-weight:500}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--mid);border-radius:2px}
+.mobile-menu{display:none;position:fixed;inset:62px 0 0;background:rgba(254,253,251,0.97);backdrop-filter:blur(16px);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.2rem;color:var(--mid);text-decoration:none;font-weight:500}
+.mobile-menu .m-cta{background:linear-gradient(135deg,var(--lav400),var(--lil400));color:#fff;padding:.7rem 2rem;border-radius:var(--r-pill)}
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero{min-height:91vh;display:flex;align-items:center;justify-content:center;padding:clamp(4rem,8vw,6rem) clamp(1.25rem,5vw,2.5rem) clamp(3rem,6vw,4rem);background:linear-gradient(150deg,var(--lav50) 0%,var(--lil50) 55%,#fff8f5 100%);position:relative;overflow:hidden;text-align:center}
+.blob{position:absolute;border-radius:50%;filter:blur(65px);opacity:.32;pointer-events:none}
+.b1{width:clamp(260px,40vw,440px);height:clamp(260px,40vw,440px);background:var(--lav200);top:-80px;left:-100px}
+.b2{width:clamp(180px,28vw,320px);height:clamp(180px,28vw,320px);background:var(--lil200);bottom:-60px;right:-70px}
+.b3{width:clamp(120px,18vw,210px);height:clamp(120px,18vw,210px);background:#fde8f0;top:38%;right:8%}
+.hero-inner{position:relative;max-width:700px;width:100%}
+.badge{display:inline-block;background:var(--lav100);color:var(--mauve);font-size:.78rem;font-weight:500;padding:.32rem 1rem;border-radius:var(--r-pill);margin-bottom:1.4rem;letter-spacing:.04em;border:1px solid var(--lav200)}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.15;color:var(--dark);margin-bottom:.4rem}
+.hero h1 em{color:var(--lav500);font-style:italic}
+.hero-sub{font-size:.88rem;color:var(--muted);font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.4rem}
+.hero-tagline{font-family:'Lora',serif;font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--mid);font-style:italic;margin-bottom:1.1rem;line-height:1.6;max-width:600px;margin-left:auto;margin-right:auto}
+.hero-intro{font-size:.95rem;color:var(--muted);max-width:520px;margin:0 auto 2.2rem}
+.btn-primary{display:inline-block;background:linear-gradient(135deg,#8b5cf6,#c084fc);color:#fff;padding:.82rem 2.2rem;border-radius:var(--r-pill);font-size:.97rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(139,92,246,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(139,92,246,.4)}
+.hero-pills{margin-top:2rem;display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.82);border:1px solid var(--border);border-radius:var(--r-pill);padding:.38rem 1rem;font-size:.8rem;color:var(--mid);backdrop-filter:blur(8px)}
+.hero-orbs{margin-top:2rem;display:flex;justify-content:center}
 
-  body {
-    font-family: var(--font-body);
-    background: var(--cream);
-    color: var(--text-dark);
-    overflow-x: hidden;
-    line-height: 1.7;
-  }
+/* UTIL */
+section{padding:clamp(3.5rem,7vw,5.5rem) clamp(1.25rem,5vw,2.5rem)}
+.container{max-width:980px;margin:0 auto}
+.s-label{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lav500);margin-bottom:.6rem}
+.s-title{font-family:'Lora',serif;font-size:clamp(1.65rem,3.5vw,2.4rem);color:var(--dark);line-height:1.25;margin-bottom:1.3rem}
+.divider{width:44px;height:3px;background:linear-gradient(90deg,var(--lav400),var(--lil400));border-radius:4px;margin-bottom:1.8rem}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
 
-  /* ====== NAV ====== */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1.25rem 2rem;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(250, 249, 247, 0.92);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(196, 181, 253, 0.2);
-    transition: box-shadow 0.3s;
-  }
-  nav.scrolled { box-shadow: 0 2px 20px rgba(45,36,56,0.08); }
-  .nav-name {
-    font-family: var(--font-display);
-    font-size: 1.25rem; font-weight: 400;
-    color: var(--text-dark); letter-spacing: 0.01em;
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 1.75rem; list-style: none; align-items: center; }
-  .nav-links a {
-    font-size: 0.8rem; font-weight: 400;
-    color: var(--text-mid); text-decoration: none;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--lilac-deep); }
-  .nav-cta {
-    background: var(--lavender-200) !important;
-    color: var(--text-dark) !important; padding: 0.5rem 1.25rem;
-    border-radius: var(--radius-pill); font-weight: 500 !important;
-    text-transform: none !important; letter-spacing: 0 !important;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--lavender-300) !important; }
-  .hamburger {
-    display: none; flex-direction: column; gap: 5px; cursor: pointer;
-    padding: 4px;
-  }
-  .hamburger span {
-    display: block; width: 22px; height: 2px;
-    background: var(--text-dark); border-radius: 2px;
-    transition: all 0.3s;
-  }
+/* ── ABOUT WITH PHOTO ── */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 
-  /* ====== PAGE SYSTEM ====== */
-  .page { display: none; }
-  .page.active { display: block; }
+/* Photo column */
+.about-photo-col{position:relative}
+.photo-frame{
+  position:relative;
+  border-radius:var(--r-xl) var(--r-xl) 120px var(--r-xl);
+  overflow:hidden;
+  aspect-ratio:4/5;
+  box-shadow:0 20px 60px rgba(139,92,246,0.18);
+}
+.photo-frame img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+  transition:transform .5s ease;
+}
+.photo-frame:hover img{transform:scale(1.03)}
+/* Decorative lavender blob behind photo */
+.photo-blob{
+  position:absolute;
+  width:85%;height:85%;
+  background:linear-gradient(135deg,var(--lav200),var(--lil200));
+  border-radius:var(--r-xl);
+  top:14px;left:-14px;
+  z-index:0;
+  opacity:.55;
+}
+.photo-frame{position:relative;z-index:1}
+/* Floating badge on photo */
+.photo-badge{
+  position:absolute;
+  bottom:-1rem;right:-1rem;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:.75rem 1.1rem;
+  box-shadow:var(--shadow-hover);
+  z-index:2;
+  display:flex;align-items:center;gap:.6rem;
+  white-space:nowrap;
+}
+.photo-badge-dot{width:9px;height:9px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+.photo-badge-text{font-size:.78rem;color:var(--mid);font-weight:500}
 
-  /* ====== HERO ====== */
-  .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    padding: 7rem 2rem 4rem; position: relative; overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0; z-index: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(196, 181, 253, 0.28) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 15% 80%, rgba(232, 224, 245, 0.4) 0%, transparent 55%),
-      radial-gradient(ellipse 40% 40% at 90% 75%, rgba(253, 242, 248, 0.45) 0%, transparent 50%),
-      var(--cream);
-  }
-  .hero-shapes { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-  .shape { position: absolute; border-radius: 50%; opacity: 0.18; }
-  .shape-1 {
-    width: 480px; height: 480px;
-    background: radial-gradient(circle, var(--lavender-300), transparent 70%);
-    top: -80px; right: -60px; animation: float1 8s ease-in-out infinite;
-  }
-  .shape-2 {
-    width: 320px; height: 320px;
-    background: radial-gradient(circle, var(--lilac-mid), transparent 70%);
-    bottom: 60px; left: -80px; animation: float2 10s ease-in-out infinite;
-  }
-  .shape-3 {
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, #f9a8d4, transparent 70%);
-    top: 40%; right: 12%; animation: float1 12s ease-in-out infinite reverse;
-  }
-  @keyframes float1 {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-18px) scale(1.03); }
-  }
-  @keyframes float2 {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(14px) scale(0.97); }
-  }
+/* Text column */
+.about-text p{color:var(--mid);margin-bottom:.9rem;font-size:.96rem}
+.about-text p:last-child{margin-bottom:0}
+.about-tags{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.a-tag{display:inline-block;background:var(--lav100);color:var(--mauve);font-size:.78rem;padding:.28rem .8rem;border-radius:var(--r-pill);border:1px solid var(--lav200)}
+.about-quote{
+  margin-top:1.75rem;
+  padding:1.25rem 1.4rem;
+  background:linear-gradient(135deg,var(--lav50),var(--lil50));
+  border-left:3px solid var(--lav400);
+  border-radius:0 var(--r-lg) var(--r-lg) 0;
+  font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:.93rem;line-height:1.7;
+}
+.about-quote span{display:block;margin-top:.5rem;font-family:'DM Sans',sans-serif;font-style:normal;font-size:.78rem;color:var(--muted)}
+.a-stats{display:flex;gap:clamp(1rem,3vw,2rem);margin-top:1.75rem;flex-wrap:wrap;padding-top:1.25rem;border-top:1px solid var(--border)}
+.a-stat p:first-child{font-size:1.45rem;font-family:'Lora',serif;color:var(--mauve);font-weight:500;line-height:1}
+.a-stat p:last-child{font-size:.78rem;color:var(--muted);margin-top:.2rem}
 
-  .hero-content {
-    position: relative; z-index: 1; max-width: 680px;
-    animation: fadeUp 0.9s ease both;
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* APPROACH */
+.approach{background:linear-gradient(155deg,var(--lav50),var(--lil50))}
+.approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1.1rem;margin-top:.5rem}
+.a-card{background:var(--white);border-radius:var(--r-lg);padding:clamp(1.25rem,2.5vw,1.75rem);border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.a-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.a-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
+.i-purple{background:var(--lav100)}.i-lilac{background:var(--lil100)}.i-pink{background:#fde8f0}.i-teal{background:#e0f5f0}.i-amber{background:#fef3e2}
+.a-card h3{font-family:'Lora',serif;font-size:.97rem;color:var(--dark);margin-bottom:.45rem;font-weight:500}
+.a-card p{font-size:.85rem;color:var(--muted);line-height:1.65}
 
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--lavender-100); border: 1px solid var(--lavender-200);
-    border-radius: var(--radius-pill); padding: 0.35rem 1rem;
-    font-size: 0.78rem; font-weight: 500; color: var(--lilac-deep);
-    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.75rem;
-  }
-  .eyebrow-dot {
-    width: 6px; height: 6px; background: var(--lilac-deep);
-    border-radius: 50%; flex-shrink: 0;
-  }
+/* TOPICS */
+.talk{background:var(--white)}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:.9rem;margin-top:.5rem}
+.topic{background:linear-gradient(135deg,var(--lav50),var(--lil50));border:1px solid var(--lav200);border-radius:var(--r-lg);padding:clamp(.9rem,2vw,1.25rem) 1rem;text-align:center;font-size:.87rem;color:var(--mid);transition:background .2s,transform .2s}
+.topic:hover{background:var(--lav100);transform:translateY(-2px);color:var(--mauve)}
+.topic-icon{font-size:1.35rem;margin-bottom:.4rem;display:block}
 
-  .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(3.5rem, 8vw, 6rem);
-    font-weight: 300; line-height: 1.05;
-    color: var(--text-dark); letter-spacing: -0.01em; margin-bottom: 0.2rem;
-  }
-  .hero h1 em { font-style: italic; color: var(--lilac-deep); }
-  .hero-tagline {
-    font-family: var(--font-display);
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    font-weight: 300; font-style: italic; color: var(--text-mid);
-    margin: 1.5rem 0; line-height: 1.5; max-width: 520px;
-  }
-  .hero-intro {
-    font-size: 0.95rem; color: var(--text-mid); max-width: 460px;
-    margin-bottom: 2.5rem; font-weight: 300;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--text-dark); color: var(--cream);
-    padding: 0.9rem 2rem; border-radius: var(--radius-pill);
-    font-family: var(--font-body); font-size: 0.88rem; font-weight: 500;
-    letter-spacing: 0.03em; text-decoration: none;
-    transition: background 0.2s, transform 0.15s; border: none; cursor: pointer;
-  }
-  .btn-primary:hover { background: var(--lilac-deep); transform: translateY(-2px); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent; color: var(--text-mid);
-    padding: 0.9rem 2rem; border-radius: var(--radius-pill);
-    font-family: var(--font-body); font-size: 0.88rem; font-weight: 400;
-    text-decoration: none; border: 1.5px solid var(--lavender-200);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--lilac-deep); color: var(--lilac-deep); }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .arrow-icon { font-style: normal; }
+/* TESTIMONIALS */
+.testimonials{background:linear-gradient(155deg,var(--lav50),var(--lil50))}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:1.25rem}
+.testi-card{background:var(--white);border-radius:var(--r-xl);padding:clamp(1.4rem,3vw,2rem);border:1px solid var(--border);position:relative;display:flex;flex-direction:column;gap:1rem;transition:transform .2s,box-shadow .2s}
+.testi-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.testi-mark{font-family:'Lora',serif;font-size:3.5rem;line-height:.9;color:var(--lav200);position:absolute;top:1rem;right:1.5rem;font-style:italic;pointer-events:none}
+.testi-text{font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:.93rem;line-height:1.7;flex:1}
+.testi-footer{display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.testi-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:500;flex-shrink:0}
+.av-a{background:var(--lav100);color:var(--mauve)}.av-b{background:var(--lil100);color:var(--lil600)}.av-c{background:#fde8f0;color:#9c2755}.av-d{background:#e0f5f0;color:#0f766e}.av-e{background:#fef3e2;color:#b45309}.av-f{background:var(--lav200);color:var(--mauve)}
+.testi-name{font-size:.82rem;font-weight:500;color:var(--dark)}
+.testi-handle{font-size:.75rem;color:var(--muted)}
+.stars{font-size:.75rem;color:var(--lav400);letter-spacing:.1em;margin-left:auto}
 
-  /* ====== SHARED ====== */
-  section { padding: 6rem 2rem; }
-  .container { max-width: 900px; margin: 0 auto; }
-  .container-wide { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--lilac-deep); margin-bottom: 0.75rem;
-  }
-  .section-heading {
-    font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 300; line-height: 1.15;
-    color: var(--text-dark); margin-bottom: 1.5rem;
-  }
-  .section-heading em { font-style: italic; color: var(--lilac-deep); }
+/* FAQs */
+.faqs{background:var(--white)}
+.faqs-subtitle{font-size:.96rem;color:var(--muted);max-width:560px;margin-bottom:2.5rem}
+.faq-categories{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.faq-cat{background:var(--lav50);border:1px solid var(--lav200);border-radius:var(--r-pill);padding:.38rem 1.1rem;font-size:.8rem;color:var(--mid);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.faq-cat:hover,.faq-cat.active{background:var(--lav500);border-color:var(--lav500);color:#fff}
+.faq-list{display:flex;flex-direction:column;gap:.65rem}
+.faq-item{border:1px solid var(--lav200);border-radius:var(--r-lg);overflow:hidden;background:#faf9ff;transition:background .22s,border-color .22s,box-shadow .22s}
+.faq-item:hover{background:#f0ecff;border-color:var(--lav300);box-shadow:0 4px 18px rgba(139,92,246,.1)}
+.faq-item.open{background:#ede9fe;border-color:var(--lav400);box-shadow:0 4px 18px rgba(139,92,246,.12)}
+.faq-q{width:100%;background:none;border:none;padding:1.15rem 1.4rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;gap:1rem;text-align:left;font-family:'DM Sans',sans-serif}
+.faq-q-text{font-size:.96rem;font-weight:500;color:var(--dark);line-height:1.45;transition:color .2s}
+.faq-item:hover .faq-q-text,.faq-item.open .faq-q-text{color:var(--mauve)}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--lav100);border:1px solid var(--lav200);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s}
+.faq-item:hover .faq-icon{background:var(--lav200);border-color:var(--lav300)}
+.faq-item.open .faq-icon{background:var(--lav500);border-color:var(--lav500)}
+.faq-icon svg{transition:transform .3s}
+.faq-item.open .faq-icon svg{transform:rotate(45deg)}
+.faq-icon svg path{stroke:var(--mauve);transition:stroke .25s}
+.faq-item.open .faq-icon svg path{stroke:#fff}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.faq-body-inner{padding:0 1.4rem 1.3rem;font-size:.9rem;color:var(--mid);line-height:1.75;border-top:1px solid var(--lav200)}
+.faq-body-inner p{padding-top:1rem}
+.faq-body-inner ul{padding-top:1rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.faq-body-inner ul li::marker{color:var(--lav400)}
+.faq-tag{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--lav200);color:var(--mauve);padding:.18rem .65rem;border-radius:var(--r-pill);margin-bottom:.2rem}
+.faq-cta{margin-top:2.5rem;background:linear-gradient(135deg,var(--lav50),var(--lil50));border:1px solid var(--border);border-radius:var(--r-xl);padding:clamp(1.5rem,3vw,2rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.faq-cta p{font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:.97rem;max-width:440px}
+.btn-grad{display:inline-block;background:linear-gradient(135deg,#8b5cf6,#c084fc);color:#fff;padding:.75rem 2rem;border-radius:var(--r-pill);font-size:.92rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(139,92,246,.3);white-space:nowrap}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(139,92,246,.4)}
 
-  /* ====== ABOUT ====== */
-  .about { background: var(--warm-white); }
-  .about-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; align-items: start;
-  }
-  .about-text p {
-    font-size: 1rem; color: var(--text-mid); font-weight: 300;
-    margin-bottom: 1.25rem; line-height: 1.8;
-  }
-  .about-text p:last-child { margin-bottom: 0; }
-  .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
-  .highlight-card {
-    background: var(--lavender-50); border: 1px solid var(--lavender-100);
-    border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
-    opacity: 0; transform: translateY(16px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .highlight-card.visible { opacity: 1; transform: translateY(0); }
-  .highlight-card h4 {
-    font-family: var(--font-display); font-size: 1.1rem;
-    font-weight: 500; color: var(--text-dark); margin-bottom: 0.3rem;
-  }
-  .highlight-card p {
-    font-size: 0.875rem; color: var(--text-muted);
-    font-weight: 300; line-height: 1.6;
-  }
-  .highlight-icon {
-    width: 32px; height: 32px; background: var(--lavender-200);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    margin-bottom: 0.75rem; font-size: 14px;
-  }
+/* BLOGS */
+.blogs{background:linear-gradient(155deg,var(--lil50),var(--lav50))}
+.blogs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1.15rem;margin-top:1.25rem}
+.blog-card{background:var(--white);border-radius:var(--r-lg);padding:clamp(1.25rem,2.5vw,1.6rem);border:1px solid var(--border);text-decoration:none;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.blog-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.blog-source{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--lav500);margin-bottom:.45rem}
+.blog-card h3{font-family:'Lora',serif;font-size:.93rem;color:var(--dark);margin-bottom:.45rem;line-height:1.4;font-weight:500;flex:1}
+.blog-card p{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.65rem}
+.blog-arrow{font-size:.8rem;color:var(--lav500);font-weight:500;margin-top:auto}
 
-  /* ====== APPROACH ====== */
-  .approach { background: linear-gradient(160deg, var(--lavender-50) 0%, var(--cream) 50%, var(--rose-soft) 100%); }
-  .approach-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem; margin-top: 3rem;
-  }
-  .approach-card {
-    background: rgba(255,255,255,0.7); border: 1px solid rgba(196,181,253,0.25);
-    border-radius: var(--radius-xl); padding: 2rem;
-    backdrop-filter: blur(8px); opacity: 0; transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.2s;
-  }
-  .approach-card.visible { opacity: 1; transform: translateY(0); }
-  .approach-card:hover { box-shadow: 0 8px 32px rgba(139,92,246,0.1); transform: translateY(-4px); }
-  .approach-card:nth-child(2) { transition-delay: 0.1s; }
-  .approach-card:nth-child(3) { transition-delay: 0.2s; }
-  .approach-card:nth-child(4) { transition-delay: 0.3s; }
-  .approach-card:nth-child(5) { transition-delay: 0.4s; }
-  .approach-num {
-    font-family: var(--font-display); font-size: 2.5rem;
-    font-weight: 300; color: var(--lavender-300); line-height: 1; margin-bottom: 1rem;
-  }
-  .approach-card h3 {
-    font-family: var(--font-display); font-size: 1.25rem;
-    font-weight: 500; color: var(--text-dark); margin-bottom: 0.6rem;
-  }
-  .approach-card p { font-size: 0.875rem; color: var(--text-muted); font-weight: 300; line-height: 1.7; }
+/* BOOKING */
+.booking{background:linear-gradient(135deg,var(--lav500),var(--lil600));text-align:center;position:relative;overflow:hidden}
+.booking::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='20' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/svg%3E");pointer-events:none}
+.booking-inner{position:relative;max-width:620px;margin:0 auto}
+.booking h2{font-family:'Lora',serif;font-size:clamp(1.7rem,3.5vw,2.5rem);color:#fff;margin-bottom:.9rem;line-height:1.25}
+.booking p{color:rgba(255,255,255,.87);margin-bottom:2.2rem;font-size:.97rem;max-width:500px;margin-left:auto;margin-right:auto}
+.btn-white{display:inline-block;background:#fff;color:var(--mauve);padding:.82rem 2.2rem;border-radius:var(--r-pill);font-size:.97rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
 
-  /* ====== TOPICS ====== */
-  .topics { background: var(--warm-white); }
-  .topics-intro {
-    font-size: 1rem; color: var(--text-mid); font-weight: 300;
-    max-width: 540px; margin-bottom: 2.5rem; line-height: 1.8;
-  }
-  .topics-cloud { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .topic-pill {
-    padding: 0.6rem 1.4rem; border-radius: var(--radius-pill);
-    font-size: 0.875rem; font-weight: 400; letter-spacing: 0.01em;
-    border: 1.5px solid transparent; transition: all 0.2s;
-    cursor: default; opacity: 0; animation: pillIn 0.4s ease forwards;
-  }
-  .topic-pill:nth-child(1) { animation-delay: 0.05s; }
-  .topic-pill:nth-child(2) { animation-delay: 0.1s; }
-  .topic-pill:nth-child(3) { animation-delay: 0.15s; }
-  .topic-pill:nth-child(4) { animation-delay: 0.2s; }
-  .topic-pill:nth-child(5) { animation-delay: 0.25s; }
-  .topic-pill:nth-child(6) { animation-delay: 0.3s; }
-  .topic-pill:nth-child(7) { animation-delay: 0.35s; }
-  .topic-pill:nth-child(8) { animation-delay: 0.4s; }
-  @keyframes pillIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  .pill-lavender { background: var(--lavender-100); color: var(--lilac-deep); border-color: var(--lavender-200); }
-  .pill-lavender:hover { background: var(--lavender-200); border-color: var(--lavender-300); }
-  .pill-rose { background: #fde8f0; color: #a0406f; border-color: #f9c0d5; }
-  .pill-rose:hover { background: #fbd0e3; border-color: #f4a0c0; }
-  .pill-sage { background: var(--sage-soft); color: #4a7c65; border-color: #c8e4d8; }
-  .pill-sage:hover { background: #ddf0e8; border-color: #a8d4bc; }
-  .pill-peach { background: #fff3ed; color: #9a5030; border-color: #fdd5ba; }
-  .pill-peach:hover { background: #ffe8d6; border-color: #fbbc90; }
+/* CLOSING */
+.closing{background:var(--white);padding:clamp(3.5rem,7vw,5.5rem) clamp(1.25rem,5vw,2.5rem)}
+.closing-inner{max-width:780px;margin:0 auto;text-align:center}
+.closing-label{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lav500);margin-bottom:1rem}
+.closing-title{font-family:'Lora',serif;font-size:clamp(1.5rem,3vw,2rem);color:var(--dark);margin-bottom:2.5rem}
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1.1rem;margin-bottom:3rem}
+.q-card{background:linear-gradient(135deg,var(--lav50),var(--lil50));border:1px solid var(--border);border-radius:var(--r-xl);padding:clamp(1.4rem,3vw,2rem);text-align:left;position:relative}
+.q-mark{font-family:'Lora',serif;font-size:3rem;line-height:.8;color:var(--lav200);position:absolute;top:1rem;left:1.2rem}
+.q-text{font-family:'Lora',serif;font-style:italic;font-size:.93rem;color:var(--mid);line-height:1.72;padding-top:1.5rem}
+.closing-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.closing-cta-note{font-size:.9rem;color:var(--muted)}
+.closing-accent{width:44px;height:3px;background:linear-gradient(90deg,var(--lav400),var(--lil400));border-radius:4px;margin:2.5rem auto 0}
 
-  /* ====== TESTIMONIALS ====== */
-  .testimonials {
-    background: linear-gradient(160deg, var(--rose-soft) 0%, var(--cream) 60%, var(--lavender-50) 100%);
-    padding: 6rem 2rem;
-  }
-  .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
-  .testimonials-header .section-label { justify-content: center; display: flex; align-items: center; gap: 6px; }
-  .star-row { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
-  .testimonials-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; max-width: 1000px; margin: 0 auto;
-  }
-  .testimonial-card {
-    background: rgba(255,255,255,0.85); border: 1px solid rgba(196,181,253,0.2);
-    border-radius: var(--radius-xl); padding: 2rem 2rem 1.75rem;
-    backdrop-filter: blur(8px); position: relative;
-    transition: transform 0.25s, box-shadow 0.25s;
-    opacity: 0; transform: translateY(20px);
-  }
-  .testimonial-card.visible { opacity: 1; transform: translateY(0); }
-  .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card); }
-  .testimonial-card:nth-child(2) { transition-delay: 0.1s; }
-  .testimonial-card:nth-child(3) { transition-delay: 0.2s; }
-  .testimonial-card:nth-child(4) { transition-delay: 0.3s; }
-  .quote-mark {
-    font-family: var(--font-display); font-size: 4rem; line-height: 0.6;
-    color: var(--lavender-300); font-weight: 300; margin-bottom: 1rem;
-    display: block;
-  }
-  .testimonial-text {
-    font-family: var(--font-display); font-size: 1.05rem; font-weight: 300;
-    font-style: italic; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem;
-  }
-  .testimonial-footer { display: flex; align-items: center; gap: 0.75rem; }
-  .testimonial-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--lavender-200), var(--lilac-mid));
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-size: 1.1rem;
-    font-weight: 400; color: var(--text-dark); flex-shrink: 0;
-  }
-  .testimonial-name {
-    font-size: 0.85rem; font-weight: 500; color: var(--text-dark);
-  }
-  .testimonial-context {
-    font-size: 0.78rem; color: var(--text-muted); font-weight: 300;
-  }
-  .testimonial-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 1px; }
+/* FOOTER */
+footer{background:var(--lav50);border-top:1px solid var(--border);padding:1.75rem clamp(1.25rem,4vw,2.5rem);text-align:center;font-size:.8rem;color:var(--muted)}
+footer a{color:var(--lav500);text-decoration:none}
+footer p+p{margin-top:.4rem}
 
-  /* ====== GROUNDING TECHNIQUES (homepage) ====== */
-  .grounding {
-    background: var(--warm-white); padding: 6rem 2rem;
-  }
-  .grounding-header { margin-bottom: 3rem; }
-  .grounding-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.25rem; margin-bottom: 2.5rem;
-  }
-  .grounding-card {
-    background: var(--cream); border: 1px solid rgba(196,181,253,0.25);
-    border-radius: var(--radius-xl); padding: 1.75rem;
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    cursor: default; opacity: 0; transform: translateY(20px);
-  }
-  .grounding-card.visible { opacity: 1; transform: translateY(0); }
-  .grounding-card:hover {
-    transform: translateY(-4px); box-shadow: var(--shadow-soft);
-    border-color: var(--lavender-300);
-  }
-  .grounding-card:nth-child(2) { transition-delay: 0.08s; }
-  .grounding-card:nth-child(3) { transition-delay: 0.16s; }
-  .grounding-card:nth-child(4) { transition-delay: 0.24s; }
-  .grounding-card:nth-child(5) { transition-delay: 0.32s; }
-  .grounding-icon {
-    font-size: 1.5rem; margin-bottom: 1rem; display: block;
-  }
-  .grounding-card h3 {
-    font-family: var(--font-display); font-size: 1.15rem;
-    font-weight: 500; color: var(--text-dark); margin-bottom: 0.4rem;
-  }
-  .grounding-card .technique-time {
-    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--lilac-deep); margin-bottom: 0.75rem;
-  }
-  .grounding-card p {
-    font-size: 0.875rem; color: var(--text-muted);
-    font-weight: 300; line-height: 1.7;
-  }
-  .grounding-cta { text-align: center; margin-top: 0.5rem; }
-
-  /* ====== FAQ ====== */
-  .faq {
-    background: linear-gradient(160deg, var(--lavender-50) 0%, var(--warm-white) 100%);
-    padding: 6rem 2rem;
-  }
-  .faq-inner { max-width: 760px; margin: 0 auto; }
-  .faq-header { margin-bottom: 3rem; }
-  .faq-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-  .faq-item {
-    background: rgba(255,255,255,0.9); border: 1px solid rgba(196,181,253,0.25);
-    border-radius: var(--radius-lg); overflow: hidden;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .faq-item.open { border-color: var(--lavender-300); box-shadow: var(--shadow-soft); }
-  .faq-question {
-    width: 100%; text-align: left; padding: 1.4rem 1.75rem;
-    background: transparent; border: none; cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 1rem; font-family: var(--font-body);
-  }
-  .faq-q-text {
-    font-family: var(--font-display); font-size: 1.1rem;
-    font-weight: 500; color: var(--text-dark); text-align: left; line-height: 1.4;
-  }
-  .faq-icon {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--lavender-100); border: 1px solid var(--lavender-200);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; color: var(--lilac-deep); flex-shrink: 0;
-    transition: transform 0.3s, background 0.2s;
-  }
-  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--lavender-200); }
-  .faq-answer {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 1.75rem;
-  }
-  .faq-item.open .faq-answer { max-height: 400px; padding: 0 1.75rem 1.5rem; }
-  .faq-answer p {
-    font-size: 0.925rem; color: var(--text-mid);
-    font-weight: 300; line-height: 1.8;
-  }
-
-  /* ====== BOOKING ====== */
-  .booking {
-    background: linear-gradient(135deg, var(--text-dark) 0%, #3d2e54 100%);
-    position: relative; overflow: hidden;
-  }
-  .booking-bg-shape { position: absolute; border-radius: 50%; pointer-events: none; }
-  .bshape-1 {
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(167,139,250,0.15), transparent 70%);
-    top: -100px; right: -100px;
-  }
-  .bshape-2 {
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(253,242,248,0.08), transparent 70%);
-    bottom: -50px; left: -50px;
-  }
-  .booking-inner {
-    position: relative; z-index: 1; text-align: center;
-    max-width: 620px; margin: 0 auto;
-  }
-  .booking .section-label { color: var(--lavender-300); }
-  .booking .section-heading { color: #f5f3ff; }
-  .booking .section-heading em { color: var(--lavender-300); }
-  .booking-text {
-    font-size: 1.05rem; color: rgba(245,243,255,0.7);
-    font-weight: 300; margin-bottom: 2.5rem; line-height: 1.8;
-  }
-  .btn-light {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--lavender-200); color: var(--text-dark);
-    padding: 1rem 2.25rem; border-radius: var(--radius-pill);
-    font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
-    text-decoration: none; transition: background 0.2s, transform 0.15s;
-    border: none; cursor: pointer;
-  }
-  .btn-light:hover { background: #f5f3ff; transform: translateY(-2px); }
-
-  /* ====== CLOSING ====== */
-  .closing {
-    background: var(--lavender-50); text-align: center; padding: 5rem 2rem;
-  }
-  .closing-quote {
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 4vw, 2.4rem);
-    font-weight: 300; font-style: italic; color: var(--text-dark);
-    max-width: 680px; margin: 0 auto 1.5rem; line-height: 1.4;
-  }
-  .closing-quote em { color: var(--lilac-deep); font-style: normal; }
-  .closing-sub { font-size: 0.9rem; color: var(--text-muted); font-weight: 300; }
-
-  /* ====== FOOTER ====== */
-  footer {
-    background: var(--text-dark); padding: 2.5rem 2rem;
-    display: flex; flex-wrap: wrap; justify-content: space-between;
-    align-items: center; gap: 1rem;
-  }
-  footer p { font-size: 0.8rem; color: rgba(196,181,253,0.5); font-weight: 300; }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a {
-    font-size: 0.78rem; color: rgba(196,181,253,0.5);
-    text-decoration: none; font-weight: 300; transition: color 0.2s;
-  }
-  .footer-links a:hover { color: rgba(196,181,253,0.9); }
-
-  /* ====== SCROLL ANIMATION ====== */
-  .reveal {
-    opacity: 0; transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* ====== BLOG PAGE ====== */
-  .blog-hero {
-    background: linear-gradient(160deg, var(--lavender-50) 0%, var(--cream) 100%);
-    padding: 9rem 2rem 5rem; text-align: center;
-  }
-  .blog-hero h1 {
-    font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 300; color: var(--text-dark); margin-bottom: 1rem; line-height: 1.1;
-  }
-  .blog-hero h1 em { color: var(--lilac-deep); font-style: italic; }
-  .blog-hero p {
-    font-size: 1rem; color: var(--text-muted); font-weight: 300;
-    max-width: 520px; margin: 0 auto; line-height: 1.8;
-  }
-  .blog-page { padding: 4rem 2rem 6rem; background: var(--cream); }
-  .blog-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem; max-width: 1100px; margin: 0 auto;
-  }
-  .blog-card {
-    background: var(--warm-white); border: 1px solid rgba(196,181,253,0.2);
-    border-radius: var(--radius-xl); overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.25s;
-    cursor: pointer; display: flex; flex-direction: column;
-    opacity: 0; transform: translateY(20px);
-  }
-  .blog-card.visible { opacity: 1; transform: translateY(0); }
-  .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); }
-  .blog-card-thumb {
-    height: 140px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3rem; position: relative; overflow: hidden;
-  }
-  .thumb-lavender { background: linear-gradient(135deg, var(--lavender-100), var(--lilac-soft)); }
-  .thumb-rose { background: linear-gradient(135deg, var(--rose-warm), #fce4ef); }
-  .thumb-sage { background: linear-gradient(135deg, var(--sage-soft), #e0f0e9); }
-  .thumb-peach { background: linear-gradient(135deg, var(--peach-soft), #ffe4d0); }
-  .thumb-amber { background: linear-gradient(135deg, var(--amber-soft), #fef3c7); }
-  .blog-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-  .blog-tag {
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--lilac-deep);
-    background: var(--lavender-100); border-radius: var(--radius-pill);
-    padding: 0.25rem 0.75rem; display: inline-block; margin-bottom: 0.75rem;
-  }
-  .blog-card-title {
-    font-family: var(--font-display); font-size: 1.25rem;
-    font-weight: 500; color: var(--text-dark); line-height: 1.3; margin-bottom: 0.6rem;
-  }
-  .blog-card-excerpt {
-    font-size: 0.875rem; color: var(--text-muted);
-    font-weight: 300; line-height: 1.7; flex: 1; margin-bottom: 1.25rem;
-  }
-  .blog-card-footer {
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 1rem; border-top: 1px solid rgba(196,181,253,0.2);
-  }
-  .blog-read-time { font-size: 0.78rem; color: var(--text-muted); font-weight: 300; }
-  .blog-read-link {
-    font-size: 0.8rem; font-weight: 500; color: var(--lilac-deep);
-    text-decoration: none; display: flex; align-items: center; gap: 4px;
-    transition: gap 0.2s;
-  }
-  .blog-read-link:hover { gap: 8px; }
-
-  /* ====== ARTICLE PAGE ====== */
-  .article-back {
-    padding: 8rem 2rem 2rem; max-width: 760px; margin: 0 auto;
-  }
-  .back-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 0.82rem; font-weight: 500; color: var(--text-muted);
-    text-decoration: none; cursor: pointer; background: none; border: none;
-    font-family: var(--font-body); transition: color 0.2s;
-  }
-  .back-btn:hover { color: var(--lilac-deep); }
-  .article-body { padding: 0 2rem 6rem; max-width: 760px; margin: 0 auto; }
-  .article-tag {
-    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--lilac-deep);
-    background: var(--lavender-100); border-radius: var(--radius-pill);
-    padding: 0.3rem 0.9rem; display: inline-block; margin-bottom: 1.25rem;
-  }
-  .article-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 300; color: var(--text-dark);
-    line-height: 1.15; margin-bottom: 1.5rem;
-  }
-  .article-meta {
-    display: flex; align-items: center; gap: 1.25rem;
-    margin-bottom: 3rem; padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(196,181,253,0.25);
-  }
-  .article-author-avatar {
-    width: 42px; height: 42px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--lavender-200), var(--lilac-mid));
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-size: 1.1rem; color: var(--text-dark);
-  }
-  .article-meta-text { font-size: 0.85rem; color: var(--text-muted); font-weight: 300; }
-  .article-meta-text strong { color: var(--text-dark); font-weight: 500; display: block; }
-  .article-content h2 {
-    font-family: var(--font-display); font-size: 1.7rem;
-    font-weight: 400; color: var(--text-dark);
-    margin: 2.5rem 0 1rem; line-height: 1.3;
-  }
-  .article-content h3 {
-    font-family: var(--font-display); font-size: 1.3rem;
-    font-weight: 500; color: var(--text-dark);
-    margin: 2rem 0 0.75rem;
-  }
-  .article-content p {
-    font-size: 1.025rem; color: var(--text-mid);
-    font-weight: 300; line-height: 1.9; margin-bottom: 1.5rem;
-  }
-  .article-content ul, .article-content ol {
-    padding-left: 1.5rem; margin-bottom: 1.5rem;
-  }
-  .article-content li {
-    font-size: 1rem; color: var(--text-mid);
-    font-weight: 300; line-height: 1.8; margin-bottom: 0.5rem;
-  }
-  .article-callout {
-    background: var(--lavender-50); border-left: 3px solid var(--lilac-deep);
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-    padding: 1.5rem 1.75rem; margin: 2rem 0;
-  }
-  .article-callout p { margin-bottom: 0; font-style: italic; }
-  .technique-step {
-    background: var(--warm-white); border: 1px solid rgba(196,181,253,0.25);
-    border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
-    margin: 0.75rem 0; display: flex; gap: 1rem; align-items: flex-start;
-  }
-  .step-num {
-    font-family: var(--font-display); font-size: 1.6rem;
-    font-weight: 300; color: var(--lavender-300); flex-shrink: 0; line-height: 1;
-  }
-  .step-content strong { display: block; font-weight: 500; color: var(--text-dark); margin-bottom: 0.25rem; }
-  .step-content p { font-size: 0.9rem; margin: 0; line-height: 1.7; }
-
-  /* ====== RESPONSIVE ====== */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { display: none; }
-    .nav-links.open {
-      display: flex; flex-direction: column; position: fixed;
-      top: 64px; left: 0; right: 0;
-      background: rgba(250,249,247,0.97); backdrop-filter: blur(16px);
-      padding: 1.5rem 1.25rem 2rem; gap: 1.25rem;
-      border-bottom: 1px solid rgba(196,181,253,0.2);
-      z-index: 99;
-    }
-    .nav-links.open li a { font-size: 0.95rem; }
-    .hamburger { display: flex; }
-    .hero { padding: 6rem 1.25rem 3rem; }
-    section { padding: 4rem 1.25rem; }
-    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .approach-grid { grid-template-columns: 1fr; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .blog-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 3.2rem; }
-    footer { flex-direction: column; text-align: center; }
-    .blog-hero { padding: 8rem 1.25rem 3rem; }
-    .blog-page { padding: 3rem 1.25rem 5rem; }
-    .article-back, .article-body { padding-left: 1.25rem; padding-right: 1.25rem; }
-  }
+/* RESPONSIVE */
+@media(max-width:768px){
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-photo-col{max-width:340px;margin:0 auto}
+  .photo-badge{bottom:-.5rem;right:-.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .faq-cta{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2.2rem}
+  .topics-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .about-photo-col{max-width:280px}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="main-nav">
-  <a href="#" class="nav-name" onclick="showPage('home'); return false;">Aditi Jain</a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#about" onclick="showPage('home'); setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}),100); return false;">About</a></li>
-    <li><a href="#approach" onclick="showPage('home'); setTimeout(()=>document.getElementById('approach').scrollIntoView({behavior:'smooth'}),100); return false;">Approach</a></li>
-    <li><a href="#topics" onclick="showPage('home'); setTimeout(()=>document.getElementById('topics').scrollIntoView({behavior:'smooth'}),100); return false;">Topics</a></li>
-    <li><a href="#" onclick="showPage('blog'); return false;">Blog</a></li>
-    <li><a href="#booking" onclick="showPage('home'); setTimeout(()=>document.getElementById('booking').scrollIntoView({behavior:'smooth'}),100); return false;" class="nav-cta">Book a Session</a></li>
+<nav>
+  <a href="#" class="nav-logo">Aditi Jain</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#topics">Focus areas</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#blogs">Writing</a></li>
+    <li><a href="#booking" class="nav-cta">Book a session</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" id="ham" aria-label="Open menu">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
-
-<!-- ==================== HOME PAGE ==================== -->
-<div id="page-home" class="page active">
+<div class="mobile-menu" id="mob">
+  <a href="#about">About</a>
+  <a href="#approach">Approach</a>
+  <a href="#topics">Focus areas</a>
+  <a href="#testimonials">Stories</a>
+  <a href="#faqs">FAQs</a>
+  <a href="#blogs">Writing</a>
+  <a href="#booking" class="m-cta">Book a session</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <span class="eyebrow-dot"></span>
-      Psychologist &amp; Therapist
-    </div>
-    <h1>Aditi<br><em>Jain</em></h1>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="hero-inner">
+    <div class="badge">✦ Psychologist &amp; Therapist</div>
+    <h1>Aditi <em>Jain</em></h1>
+    <p class="hero-sub">Psychologist</p>
     <p class="hero-tagline">"Warm, collaborative therapy for healing, self-understanding, and meaningful change."</p>
-    <p class="hero-intro">Aditi is a psychologist with 2 years of experience offering trauma-informed therapy — a compassionate, reflective space where you can feel safe to explore what matters most.</p>
-    <div class="hero-actions">
-      <a href="https://topmate.io" target="_blank" class="btn-primary">Book a Session <span class="arrow-icon">→</span></a>
-      <a href="#about" class="btn-secondary">Learn more</a>
+    <p class="hero-intro">Aditi is a psychologist with 2 years of experience offering trauma-informed therapy — a compassionate, reflective space where you feel genuinely heard and safely held.</p>
+    <a href="https://topmate.io/" target="_blank" class="btn-primary">Book a session</a>
+    <div class="hero-pills">
+      <span class="pill">Trauma-informed</span>
+      <span class="pill">Queer-affirmative</span>
+      <span class="pill">Relational therapy</span>
+      <span class="pill">Person-centered</span>
+    </div>
+    <div class="hero-orbs">
+      <svg width="240" height="72" viewBox="0 0 240 72" fill="none" aria-hidden="true">
+        <ellipse cx="120" cy="58" rx="100" ry="12" fill="#ede9fe" opacity=".45"/>
+        <circle cx="74" cy="36" r="26" fill="#ddd6fe" opacity=".5"/>
+        <circle cx="120" cy="26" r="33" fill="#e9d5ff" opacity=".45"/>
+        <circle cx="168" cy="38" r="20" fill="#fde8f0" opacity=".48"/>
+        <circle cx="120" cy="26" r="16" fill="#f5f3ff" opacity=".8"/>
+        <circle cx="120" cy="26" r="7" fill="#a78bfa" opacity=".38"/>
+      </svg>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT WITH PHOTO -->
 <section class="about" id="about">
   <div class="container">
-    <div class="about-inner">
-      <div class="about-text reveal">
-        <p class="section-label">About Aditi</p>
-        <h2 class="section-heading">A space for you to<br><em>just be</em></h2>
-        <p>I'm Aditi, a psychologist with 2 years of clinical experience. I work from a trauma-informed lens, meaning that everything we do together is grounded in emotional safety, consent, and your own pace.</p>
-        <p>I believe therapy works best when it feels like a genuine relationship — not a set of techniques applied from a distance. My approach draws from relational and person-centered thinking, as well as psychoanalytic ideas that help us understand the deeper patterns shaping our lives.</p>
-        <p>I offer queer-affirmative and inclusive therapy, and strive to create a space where all identities, experiences, and ways of being are genuinely welcomed and respected.</p>
-        <p>You bring the curiosity. I bring the care. Together, we find a way through.</p>
-      </div>
-      <div class="about-highlights">
-        <div class="highlight-card">
-          <div class="highlight-icon">✦</div>
-          <h4>Trauma-Informed</h4>
-          <p>Every session is grounded in safety, pacing, and respect for your nervous system.</p>
+    <div class="about-grid">
+
+      <!-- Photo column -->
+      <div class="about-photo-col fade-up">
+        <div class="photo-blob"></div>
+        <div class="photo-frame">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&fit=crop&crop=face"
+            alt="Aditi Jain – Psychologist in a therapy session"
+            loading="lazy"
+          />
         </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">◎</div>
-          <h4>Queer-Affirmative</h4>
-          <p>A genuinely inclusive space for LGBTQIA+ people and all gender and sexual identities.</p>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">◈</div>
-          <h4>Collaborative</h4>
-          <p>Therapy shaped by your needs, your rhythm, and what feels right for you.</p>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">❋</div>
-          <h4>2 Years Clinical Experience</h4>
-          <p>Trained in multiple modalities with a warm, reflective therapeutic style.</p>
+        <div class="photo-badge">
+          <div class="photo-badge-dot"></div>
+          <span class="photo-badge-text">Accepting new clients</span>
         </div>
       </div>
+
+      <!-- Text column -->
+      <div class="fade-up" style="transition-delay:.14s">
+        <p class="s-label">About Aditi</p>
+        <h2 class="s-title">A space to be<br/>fully yourself</h2>
+        <div class="divider"></div>
+        <div class="about-text">
+          <p>I'm Aditi — a psychologist with 2 years of clinical experience. My work is rooted in the belief that therapy is a deeply collaborative journey, shaped by your unique experiences, needs, and pace.</p>
+          <p>I work through a trauma-informed lens, meaning I prioritise your emotional safety, respect your boundaries, and approach every conversation with care and attunement. I draw from relational therapy, person-centered practice, and psychoanalytic thinking to help you explore patterns and understand yourself more deeply.</p>
+          <p>My practice is queer-affirmative and inclusive — a space where LGBTQIA+ identities and experiences are not just welcomed, but truly honoured. Whoever you are, you are welcome here.</p>
+        </div>
+        <div class="about-tags">
+          <span class="a-tag">Relational therapy</span>
+          <span class="a-tag">Person-centered</span>
+          <span class="a-tag">Psychoanalytic thinking</span>
+          <span class="a-tag">Trauma-informed</span>
+          <span class="a-tag">Queer-affirmative</span>
+        </div>
+        <blockquote class="about-quote">
+          "Therapy, at its best, is a space where you are met — not fixed. I believe in your capacity to heal, grow, and find your way."
+          <span>— Aditi Jain</span>
+        </blockquote>
+        <div class="a-stats">
+          <div class="a-stat"><p>2+</p><p>Years experience</p></div>
+          <div class="a-stat"><p>Safe</p><p>Inclusive space</p></div>
+          <div class="a-stat"><p>Online</p><p>Sessions available</p></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -764,746 +358,188 @@
 <!-- APPROACH -->
 <section class="approach" id="approach">
   <div class="container">
-    <div class="reveal">
-      <p class="section-label">How I Work</p>
-      <h2 class="section-heading">My therapeutic<br><em>approach</em></h2>
-    </div>
+    <p class="s-label fade-up">How I work</p>
+    <h2 class="s-title fade-up">My therapy approach</h2>
+    <div class="divider fade-up"></div>
     <div class="approach-grid">
-      <div class="approach-card">
-        <div class="approach-num">01</div>
-        <h3>Trauma-Informed Care</h3>
-        <p>Prioritising emotional safety and consent in every session. We move at your pace, and nothing happens without your agreement.</p>
-      </div>
-      <div class="approach-card">
-        <div class="approach-num">02</div>
-        <h3>Queer-Affirmative Practice</h3>
-        <p>Actively affirming LGBTQIA+ identities and lived experiences — not just tolerating, but truly valuing who you are.</p>
-      </div>
-      <div class="approach-card">
-        <div class="approach-num">03</div>
-        <h3>Relational Therapy</h3>
-        <p>Gently exploring patterns in how you relate to others and to yourself, so you can understand what gets in the way of connection.</p>
-      </div>
-      <div class="approach-card">
-        <div class="approach-num">04</div>
-        <h3>Person-Centred</h3>
-        <p>You are the expert on your own life. Therapy is guided by what feels meaningful to you, not a predetermined plan.</p>
-      </div>
-      <div class="approach-card">
-        <div class="approach-num">05</div>
-        <h3>Psychoanalytic Thinking</h3>
-        <p>Drawing on deeper patterns, early experiences, and unconscious processes to understand what shapes us beneath the surface.</p>
-      </div>
+      <div class="a-card fade-up"><div class="a-icon i-purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22C12 22 3 16.5 3 9.5C3 6.46 5.46 4 8.5 4C10.04 4 11.42 4.64 12 5.5C12.58 4.64 13.96 4 15.5 4C18.54 4 21 6.46 21 9.5C21 16.5 12 22 12 22Z" fill="#a78bfa"/></svg></div><h3>Trauma-informed care</h3><p>Safety and consent come first. Every part of our work together is led by what feels right for you — no pressure, no rushing.</p></div>
+      <div class="a-card fade-up" style="transition-delay:.07s"><div class="a-icon i-lilac"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c084fc" stroke-width="2"/><path d="M8 12C8 12 9.5 15 12 15C14.5 15 16 12 16 12" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="#c084fc"/><circle cx="15" cy="10" r="1" fill="#c084fc"/></svg></div><h3>Queer-affirmative practice</h3><p>LGBTQIA+ identities and experiences are affirmed and centred here — not treated as something to explain or overcome.</p></div>
+      <div class="a-card fade-up" style="transition-delay:.14s"><div class="a-icon i-pink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 8C17 11.31 14.31 14 11 14C7.69 14 5 11.31 5 8C5 4.69 7.69 2 11 2" stroke="#e879a8" stroke-width="2" stroke-linecap="round"/><path d="M7 17H17M12 17V22" stroke="#e879a8" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Relational therapy</h3><p>We explore the patterns you carry in relationships — with others and with yourself — and how these shape your inner world.</p></div>
+      <div class="a-card fade-up" style="transition-delay:.21s"><div class="a-icon i-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2dd4bf" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#2dd4bf" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" fill="#2dd4bf"/></svg></div><h3>Person-centered approach</h3><p>You are the expert on your own life. Therapy moves at your pace, guided by what you need — not a set agenda.</p></div>
+      <div class="a-card fade-up" style="transition-delay:.28s"><div class="a-icon i-amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3C12 3 5 7 5 13C5 16.87 8.13 20 12 20C15.87 20 19 16.87 19 13C19 7 12 3 12 3Z" stroke="#f59e0b" stroke-width="2"/><path d="M9 13C9 11.34 10.34 10 12 10" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Psychoanalytic perspective</h3><p>We gently explore the deeper layers of your inner world — unconscious patterns and feelings that quietly shape your experiences.</p></div>
     </div>
   </div>
 </section>
 
 <!-- TOPICS -->
-<section class="topics" id="topics">
+<section class="talk" id="topics">
   <div class="container">
-    <div class="reveal">
-      <p class="section-label">What You Can Bring</p>
-      <h2 class="section-heading">There's no<br><em>wrong reason</em> to come</h2>
-      <p class="topics-intro">You don't need to be in crisis to seek support. If something feels heavy, confusing, or stuck — that's enough. Here are some of the areas people often bring to therapy:</p>
-    </div>
-    <div class="topics-cloud">
-      <span class="topic-pill pill-lavender">Anxiety</span>
-      <span class="topic-pill pill-rose">Relationship difficulties</span>
-      <span class="topic-pill pill-sage">Identity exploration</span>
-      <span class="topic-pill pill-peach">Emotional overwhelm</span>
-      <span class="topic-pill pill-lavender">Trauma</span>
-      <span class="topic-pill pill-sage">Life transitions</span>
-      <span class="topic-pill pill-rose">Self-esteem</span>
-      <span class="topic-pill pill-lavender">Queer identity &amp; experiences</span>
-    </div>
-  </div>
-</section>
-
-<!-- GROUNDING TECHNIQUES (short, homepage) -->
-<section class="grounding" id="grounding">
-  <div class="container-wide">
-    <div class="grounding-header reveal">
-      <p class="section-label">Free Tools for You</p>
-      <h2 class="section-heading">Simple grounding<br><em>techniques</em></h2>
-      <p style="font-size:1rem;color:var(--text-mid);font-weight:300;max-width:500px;margin-top:-0.5rem;line-height:1.8;">
-        When your nervous system feels overwhelmed, these quick practices can help bring you back to the present moment.
-      </p>
-    </div>
-    <div class="grounding-grid">
-      <div class="grounding-card">
-        <span class="grounding-icon">🌿</span>
-        <div class="technique-time">1–2 minutes</div>
-        <h3>5-4-3-2-1 Senses</h3>
-        <p>Name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste. Anchors you in the present moment immediately.</p>
-      </div>
-      <div class="grounding-card">
-        <span class="grounding-icon">🌬️</span>
-        <div class="technique-time">3–5 minutes</div>
-        <h3>Box Breathing</h3>
-        <p>Inhale for 4 counts, hold for 4, exhale for 4, hold for 4. Repeat. This activates your parasympathetic nervous system.</p>
-      </div>
-      <div class="grounding-card">
-        <span class="grounding-icon">🪨</span>
-        <div class="technique-time">1 minute</div>
-        <h3>Feel Your Feet</h3>
-        <p>Press your feet firmly into the floor. Notice the texture, temperature, and pressure. Let gravity hold you for a moment.</p>
-      </div>
-      <div class="grounding-card">
-        <span class="grounding-icon">🌊</span>
-        <div class="technique-time">2–3 minutes</div>
-        <h3>Cold Water Reset</h3>
-        <p>Splash cool water on your face or hold ice. The temperature shift signals safety to your brain and slows a racing heart.</p>
-      </div>
-      <div class="grounding-card">
-        <span class="grounding-icon">🌸</span>
-        <div class="technique-time">5 minutes</div>
-        <h3>Safe Place Visualisation</h3>
-        <p>Close your eyes and imagine a place — real or imagined — where you feel completely safe. Notice every detail with your senses.</p>
-      </div>
-    </div>
-    <div class="grounding-cta">
-      <button class="btn-secondary" onclick="showPage('blog')">Read full guides on the blog →</button>
+    <p class="s-label fade-up">Focus areas</p>
+    <h2 class="s-title fade-up">What you can bring to therapy</h2>
+    <div class="divider fade-up"></div>
+    <p class="fade-up" style="color:var(--muted);max-width:540px;margin-bottom:1.8rem;font-size:.95rem">You don't need a "big enough" reason to seek support. Whatever you're carrying, it matters.</p>
+    <div class="topics-grid">
+      <div class="topic fade-up"><span class="topic-icon">🌊</span>Anxiety</div>
+      <div class="topic fade-up" style="transition-delay:.05s"><span class="topic-icon">🤝</span>Relationship difficulties</div>
+      <div class="topic fade-up" style="transition-delay:.1s"><span class="topic-icon">🌱</span>Identity exploration</div>
+      <div class="topic fade-up" style="transition-delay:.15s"><span class="topic-icon">💭</span>Emotional overwhelm</div>
+      <div class="topic fade-up" style="transition-delay:.2s"><span class="topic-icon">🕊️</span>Trauma &amp; healing</div>
+      <div class="topic fade-up" style="transition-delay:.25s"><span class="topic-icon">🔄</span>Life transitions</div>
+      <div class="topic fade-up" style="transition-delay:.3s"><span class="topic-icon">✨</span>Self-esteem</div>
+      <div class="topic fade-up" style="transition-delay:.35s"><span class="topic-icon">🌈</span>Queer identity &amp; experience</div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
-  <div class="testimonials-header reveal">
-    <div class="star-row">★ ★ ★ ★ ★</div>
-    <p class="section-label">Client Voices</p>
-    <h2 class="section-heading">What people<br><em>say</em></h2>
-    <p style="font-size:0.9rem;color:var(--text-muted);font-weight:300;margin-top:-0.5rem;">
-      Shared with permission. Names changed to protect privacy.
-    </p>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <span class="quote-mark">"</span>
-      <p class="testimonial-text">Aditi has such a rare quality — she makes you feel truly heard, without judgment. I've worked with other therapists before, but this is the first time I felt like I could say absolutely anything. Our sessions have been genuinely life-changing for me.</p>
-      <div class="testimonial-footer">
-        <div class="testimonial-avatar">R</div>
-        <div>
-          <div class="testimonial-name">Reya, 27</div>
-          <div class="testimonial-context">Anxiety &amp; self-esteem work</div>
-          <div class="testimonial-stars">★★★★★</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <span class="quote-mark">"</span>
-      <p class="testimonial-text">As a queer person, finding a therapist who actually understands my experience — not just tolerates it — felt impossible. Aditi's space felt safe from the very first session. She helped me untangle so much about my identity and relationships.</p>
-      <div class="testimonial-footer">
-        <div class="testimonial-avatar">K</div>
-        <div>
-          <div class="testimonial-name">Kiran, 24</div>
-          <div class="testimonial-context">Identity &amp; queer-affirmative therapy</div>
-          <div class="testimonional-stars testimonial-stars">★★★★★</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <span class="quote-mark">"</span>
-      <p class="testimonial-text">I came to therapy after a really difficult breakup, not knowing what to expect. Aditi helped me understand patterns I'd been carrying for years. She's warm, patient, and remarkably insightful. I feel so much more at peace with myself now.</p>
-      <div class="testimonial-footer">
-        <div class="testimonial-avatar">M</div>
-        <div>
-          <div class="testimonial-name">Meera, 31</div>
-          <div class="testimonial-context">Relationship &amp; grief work</div>
-          <div class="testimonial-stars">★★★★★</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <span class="quote-mark">"</span>
-      <p class="testimonial-text">I was sceptical about therapy — I thought I just needed to push through. Aditi helped me see how much I was holding, and that asking for support is a strength. I've grown more in these sessions than in years of trying to manage alone.</p>
-      <div class="testimonial-footer">
-        <div class="testimonial-avatar">A</div>
-        <div>
-          <div class="testimonial-name">Arjun, 29</div>
-          <div class="testimonial-context">Trauma &amp; emotional regulation</div>
-          <div class="testimonial-stars">★★★★★</div>
-        </div>
-      </div>
+  <div class="container">
+    <p class="s-label fade-up">Client stories</p>
+    <h2 class="s-title fade-up">Words from those I've worked with</h2>
+    <div class="divider fade-up"></div>
+    <p class="fade-up" style="color:var(--muted);max-width:540px;margin-bottom:2rem;font-size:.95rem">All testimonials are shared with permission and names changed to protect privacy.</p>
+    <div class="testi-grid">
+      <div class="testi-card fade-up"><span class="testi-mark">"</span><p class="testi-text">Working with Aditi felt like finally having a space where I didn't have to explain myself. She holds so much warmth and never made me feel judged — even when I shared the parts of myself I was most ashamed of.</p><div class="testi-footer"><div class="testi-avatar av-a">R</div><div><p class="testi-name">Riya, 26</p><p class="testi-handle">Anxiety &amp; self-esteem</p></div><div class="stars">★★★★★</div></div></div>
+      <div class="testi-card fade-up" style="transition-delay:.08s"><span class="testi-mark">"</span><p class="testi-text">As a queer person, I was terrified to enter therapy. Aditi created a space where my identity wasn't a problem to solve — it was just part of who I am. That meant everything to me.</p><div class="testi-footer"><div class="testi-avatar av-b">K</div><div><p class="testi-name">Karan, 29</p><p class="testi-handle">Identity &amp; queer experience</p></div><div class="stars">★★★★★</div></div></div>
+      <div class="testi-card fade-up" style="transition-delay:.16s"><span class="testi-mark">"</span><p class="testi-text">I came in thinking I just needed "tips." What I found instead was a genuine relationship — one that helped me understand patterns I'd been carrying for years without even realising.</p><div class="testi-footer"><div class="testi-avatar av-c">M</div><div><p class="testi-name">Meera, 33</p><p class="testi-handle">Relationship patterns</p></div><div class="stars">★★★★★</div></div></div>
+      <div class="testi-card fade-up" style="transition-delay:.24s"><span class="testi-mark">"</span><p class="testi-text">Aditi has a rare quality — she listens not just to what you say, but to what you're not saying. Sessions with her feel slow in the best way. Like time actually opens up.</p><div class="testi-footer"><div class="testi-avatar av-d">A</div><div><p class="testi-name">Arjun, 31</p><p class="testi-handle">Trauma &amp; life transitions</p></div><div class="stars">★★★★★</div></div></div>
+      <div class="testi-card fade-up" style="transition-delay:.32s"><span class="testi-mark">"</span><p class="testi-text">I was going through a really painful life transition and didn't know how to talk about it. Aditi helped me find the language — and more importantly, helped me feel less alone in it all.</p><div class="testi-footer"><div class="testi-avatar av-e">S</div><div><p class="testi-name">Sana, 27</p><p class="testi-handle">Grief &amp; life transitions</p></div><div class="stars">★★★★★</div></div></div>
+      <div class="testi-card fade-up" style="transition-delay:.4s"><span class="testi-mark">"</span><p class="testi-text">I've seen other therapists before, but with Aditi something is different. She brings a depth to the work that I didn't know I was missing. I leave sessions feeling more like myself.</p><div class="testi-footer"><div class="testi-avatar av-f">P</div><div><p class="testi-name">Priya, 35</p><p class="testi-handle">Emotional depth &amp; growth</p></div><div class="stars">★★★★★</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="faq-inner">
-    <div class="faq-header reveal">
-      <p class="section-label">Common Questions</p>
-      <h2 class="section-heading">You might be<br><em>wondering…</em></h2>
+<!-- FAQs -->
+<section class="faqs" id="faqs">
+  <div class="container">
+    <p class="s-label fade-up">Common questions</p>
+    <h2 class="s-title fade-up">Frequently asked questions</h2>
+    <div class="divider fade-up"></div>
+    <p class="faqs-subtitle fade-up">It's completely normal to have questions before starting therapy. Here are some of the things people often wonder about.</p>
+    <div class="faq-categories fade-up">
+      <button class="faq-cat active" data-cat="all">All</button>
+      <button class="faq-cat" data-cat="getting-started">Getting started</button>
+      <button class="faq-cat" data-cat="sessions">Sessions</button>
+      <button class="faq-cat" data-cat="approach">Approach</button>
+      <button class="faq-cat" data-cat="practical">Practical</button>
     </div>
-    <ul class="faq-list">
-      <li class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          <span class="faq-q-text">What happens in a first session?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>The first session is a gentle introduction — a chance for us to meet, for you to share what's brought you here, and for me to understand what you're looking for. There's no pressure to dive into anything you're not ready for. We'll also talk about how therapy might work for you and whether I feel like a good fit. It's okay to take your time.</p>
-        </div>
-      </li>
-      <li class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          <span class="faq-q-text">How often do we meet, and how long does therapy take?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Most people find weekly sessions work best, especially at the start — it builds a rhythm and allows us to stay connected to what's unfolding. Sessions are 50 minutes long. As for how long therapy takes, it's deeply personal. Some people find a few months transformative; others prefer longer-term work. We'll check in regularly and you'll always have a say in pacing.</p>
-        </div>
-      </li>
-      <li class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          <span class="faq-q-text">Is therapy online? How does that work?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Yes, all sessions are currently conducted online via video call. Many people find that online therapy is just as meaningful and connected as in-person work — sometimes more so, because you're in your own space. All you need is a private, comfortable spot and a stable internet connection. I use a secure, confidential platform for all sessions.</p>
-        </div>
-      </li>
-      <li class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          <span class="faq-q-text">I'm not sure if what I'm feeling is 'bad enough' for therapy. Is that okay?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Absolutely. You don't need to be in crisis to benefit from therapy. People come for all sorts of reasons — feeling stuck, navigating a big life change, wanting to understand themselves better, or simply wanting a space that's just for them. If something feels heavy or confusing, that's enough of a reason. You deserve support regardless of how 'serious' it seems.</p>
-        </div>
-      </li>
-      <li class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          <span class="faq-q-text">Is everything I share confidential?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Yes — everything you share in therapy is held in strict confidence. The only exceptions are situations where there is immediate risk of serious harm to yourself or someone else. I'll explain all of this clearly in our first session so you know exactly what to expect, and you can always ask me questions about confidentiality at any point.</p>
-        </div>
-      </li>
-      <li class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          <span class="faq-q-text">Do you work with LGBTQIA+ clients?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Yes, and it's something I care deeply about. I practice queer-affirmative therapy, which means I don't just 'accept' LGBTQIA+ identities — I genuinely celebrate and value them. I'm aware of the specific challenges, histories, and joys that come with queer experience, and I work hard to ensure my space is one where all parts of you are truly welcome.</p>
-        </div>
-      </li>
-      <li class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          <span class="faq-q-text">What are your fees, and do you offer sliding scale?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Session fees are listed on my Topmate profile. I do offer a limited number of sliding scale spots for people who need financial flexibility — please feel free to mention this when you reach out and we can have an honest conversation about it. I believe financial barriers shouldn't prevent people from accessing support.</p>
-        </div>
-      </li>
-    </ul>
+    <div class="faq-list fade-up" id="faq-list">
+      <div class="faq-item" data-cat="getting-started"><button class="faq-q"><span class="faq-q-text">I've never been to therapy before. Where do I even begin?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Getting started</span><p>Beginning therapy can feel daunting, and that's completely okay. You don't need to arrive with a clear agenda or the "right words." The first session is simply a space to meet each other — to talk about what brought you here, what you're hoping for, and to get a feel for how we might work together. There's no pressure to have everything figured out before you begin.</p></div></div></div>
+      <div class="faq-item" data-cat="getting-started"><button class="faq-q"><span class="faq-q-text">How do I know if I need therapy?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Getting started</span><p>You don't need to be in crisis to benefit from therapy. Many people come when they're feeling stuck, overwhelmed, curious about themselves, or simply want a dedicated space to think and reflect. If you've been considering it, that curiosity itself is often a good enough reason to begin.</p></div></div></div>
+      <div class="faq-item" data-cat="sessions"><button class="faq-q"><span class="faq-q-text">What happens in the first session?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Sessions</span><p>The first session is an opportunity for us to get to know each other. I might ask about what's been on your mind, a little about your background and history, and what you're hoping to get from therapy. It's also a chance for you to ask me anything. We'll use this session to decide together whether working together feels like the right fit.</p></div></div></div>
+      <div class="faq-item" data-cat="sessions"><button class="faq-q"><span class="faq-q-text">How long does each session last? How often would we meet?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Sessions</span><p>Sessions are typically 50 minutes long. Most people find it helpful to meet weekly, especially at the start — consistency creates a rhythm that supports the work. That said, frequency is always something we can discuss and adapt to what feels right for you.</p></div></div></div>
+      <div class="faq-item" data-cat="sessions"><button class="faq-q"><span class="faq-q-text">How long will I need to be in therapy?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Sessions</span><p>There's no fixed timeline. Some people find what they need in a few months; others choose to continue for longer as the work deepens. The duration depends on what you're bringing, what feels meaningful to you, and how the process unfolds. We'll check in regularly about how things are going.</p></div></div></div>
+      <div class="faq-item" data-cat="approach"><button class="faq-q"><span class="faq-q-text">What does "trauma-informed" actually mean in practice?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Approach</span><p>Trauma-informed practice means I approach everything with an awareness of how painful experiences shape a person. In practice, it means:</p><ul><li>We never go faster than feels safe for you</li><li>You always have the right to pause, redirect, or not go somewhere</li><li>I won't push you to talk about things before you're ready</li><li>Your responses — including avoidance or silence — are understood, not judged</li></ul></div></div></div>
+      <div class="faq-item" data-cat="approach"><button class="faq-q"><span class="faq-q-text">Is this a safe space if I'm LGBTQIA+?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Approach</span><p>Yes, wholeheartedly. My practice is queer-affirmative, which means your identity is not treated as a problem, a phase, or something to be explained. Whether you're exploring your identity, navigating coming out, dealing with family dynamics, or simply want a space that truly gets it — you're welcome here.</p></div></div></div>
+      <div class="faq-item" data-cat="approach"><button class="faq-q"><span class="faq-q-text">Will you give me advice or tell me what to do?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Approach</span><p>Not in the way you might expect. I believe you are the expert on your own life — my role isn't to prescribe answers, but to help you think, feel, and understand more clearly so that you can find your own. That said, I'm present, I share observations, I ask questions, and sometimes gently offer a different perspective. It's a genuine, human conversation.</p></div></div></div>
+      <div class="faq-item" data-cat="practical"><button class="faq-q"><span class="faq-q-text">Are sessions online or in person?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Practical</span><p>Sessions are currently offered online via video call. This allows us to work together regardless of where you are, and many people find the comfort of their own space actually supports the process. All you need is a private space and a stable internet connection.</p></div></div></div>
+      <div class="faq-item" data-cat="practical"><button class="faq-q"><span class="faq-q-text">How do I book a session? What happens after I book?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Practical</span><p>You can book through my Topmate page using the button on this website. Once you've chosen a time, you'll receive a confirmation with a link for the video call. The first session is also a chance to ask anything you're wondering about before we begin.</p></div></div></div>
+      <div class="faq-item" data-cat="practical"><button class="faq-q"><span class="faq-q-text">Is what I share kept confidential?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Practical</span><p>Yes. Everything you share in therapy is held in strict confidence. There are very limited exceptions — for example, if there is serious risk of harm to yourself or others — and these will be explained clearly before we begin.</p></div></div></div>
+      <div class="faq-item" data-cat="getting-started"><button class="faq-q"><span class="faq-q-text">What if I'm not sure therapy is right for me?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#6b21a8" stroke-width="1.6" stroke-linecap="round"/></svg></span></button><div class="faq-body"><div class="faq-body-inner"><span class="faq-tag">Getting started</span><p>That uncertainty is completely valid — and very common. The first session can simply be an exploration, a chance to see what it feels like, with no commitment to continue. You're not signing up for anything permanent when you book. Many people find the ambivalence ease once they experience what the space actually feels like.</p></div></div></div>
+    </div>
+    <div class="faq-cta fade-up">
+      <p>"Still have questions? Feel free to bring them to our first session — or reach out before you book. You don't have to figure everything out alone."</p>
+      <a href="https://topmate.io/" target="_blank" class="btn-grad">Book via Topmate</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOGS -->
+<section class="blogs" id="blogs">
+  <div class="container">
+    <p class="s-label fade-up">Writing &amp; reflections</p>
+    <h2 class="s-title fade-up">Thoughts on therapy &amp; wellbeing</h2>
+    <div class="divider fade-up"></div>
+    <p class="fade-up" style="color:var(--muted);margin-bottom:.5rem;font-size:.95rem">Aditi writes on Medium and Myndstories about mental health, identity, and the inner life.</p>
+    <div class="blogs-grid">
+      <a href="https://medium.com/" target="_blank" class="blog-card fade-up"><p class="blog-source">Medium</p><h3>On learning to sit with uncertainty</h3><p>What it means to tolerate not-knowing — in therapy and in everyday life.</p><span class="blog-arrow">Read on Medium →</span></a>
+      <a href="https://medium.com/" target="_blank" class="blog-card fade-up" style="transition-delay:.07s"><p class="blog-source">Medium</p><h3>Attachment, relationships, and the patterns we carry</h3><p>How early relational experiences quietly shape the way we connect with others.</p><span class="blog-arrow">Read on Medium →</span></a>
+      <a href="https://myndstories.com/" target="_blank" class="blog-card fade-up" style="transition-delay:.14s"><p class="blog-source">Myndstories</p><h3>What does queer-affirmative therapy actually mean?</h3><p>A closer look at what affirmative care looks like and why it matters.</p><span class="blog-arrow">Read on Myndstories →</span></a>
+      <a href="https://myndstories.com/" target="_blank" class="blog-card fade-up" style="transition-delay:.21s"><p class="blog-source">Myndstories</p><h3>Trauma is not just what happened — it's what it did to you</h3><p>Rethinking trauma through felt experience and the nervous system.</p><span class="blog-arrow">Read on Myndstories →</span></a>
+      <a href="https://medium.com/" target="_blank" class="blog-card fade-up" style="transition-delay:.28s"><p class="blog-source">Medium</p><h3>Self-esteem and the inner critic</h3><p>Where self-critical voices come from — and how to relate to them differently.</p><span class="blog-arrow">Read on Medium →</span></a>
+      <a href="https://myndstories.com/" target="_blank" class="blog-card fade-up" style="transition-delay:.35s"><p class="blog-source">Myndstories</p><h3>The courage it takes to begin therapy</h3><p>On the ambivalence, hope, and quiet bravery that often precedes the first session.</p><span class="blog-arrow">Read on Myndstories →</span></a>
+    </div>
   </div>
 </section>
 
 <!-- BOOKING -->
 <section class="booking" id="booking">
-  <div class="bshape-1 booking-bg-shape"></div>
-  <div class="bshape-2 booking-bg-shape"></div>
   <div class="booking-inner">
-    <p class="section-label">Ready When You Are</p>
-    <h2 class="section-heading">Book a<br><em>session</em></h2>
-    <p class="booking-text">If you're considering therapy, you're welcome here — wherever you are, and whatever brings you. You can book a session through the link below, with no pressure and at your own pace.</p>
-    <a href="https://topmate.io" target="_blank" class="btn-light">Book via Topmate <span class="arrow-icon">→</span></a>
+    <h2 class="fade-up">Ready to take the first step?</h2>
+    <p class="fade-up">If you're considering therapy, you're welcome here. Book a session using the link below — no prior experience needed, just a willingness to begin.</p>
+    <a href="https://topmate.io/" target="_blank" class="btn-white fade-up">Book via Topmate</a>
   </div>
 </section>
 
 <!-- CLOSING -->
 <section class="closing">
-  <p class="closing-quote">"Therapy can be a space to slow down, reflect, and <em>reconnect with yourself</em>. You don't have to navigate things alone."</p>
-  <p class="closing-sub">— Aditi Jain, Psychologist</p>
+  <div class="closing-inner">
+    <p class="closing-label fade-up">A note from Aditi</p>
+    <h2 class="closing-title fade-up">Therapy can be a place to slow down</h2>
+    <div class="quotes-grid">
+      <div class="q-card fade-up"><span class="q-mark">"</span><p class="q-text">Therapy can be a space to slow down, reflect, and reconnect with yourself. You don't have to navigate things alone.</p></div>
+      <div class="q-card fade-up" style="transition-delay:.09s"><span class="q-mark">"</span><p class="q-text">Healing is rarely linear. It's okay to come as you are — uncertain, tired, or unsure of what you're even looking for. That is enough to begin.</p></div>
+      <div class="q-card fade-up" style="transition-delay:.18s"><span class="q-mark">"</span><p class="q-text">You don't need to have a crisis to deserve support. Sometimes the most important thing is simply having a place where you can be honest.</p></div>
+      <div class="q-card fade-up" style="transition-delay:.27s"><span class="q-mark">"</span><p class="q-text">The relationship between a therapist and a client is itself healing. Safety, consistency, and presence — these are not just nice to have, they are the work.</p></div>
+      <div class="q-card fade-up" style="transition-delay:.36s"><span class="q-mark">"</span><p class="q-text">Understanding yourself more deeply isn't a luxury. It's one of the most meaningful things you can do — for yourself and for the people you love.</p></div>
+      <div class="q-card fade-up" style="transition-delay:.45s"><span class="q-mark">"</span><p class="q-text">Coming to therapy is not a sign of weakness. It is an act of courage — of choosing yourself, sometimes for the very first time.</p></div>
+    </div>
+    <div class="closing-cta-wrap fade-up">
+      <p class="closing-cta-note">Whenever you feel ready, I'm here.</p>
+      <a href="https://topmate.io/" target="_blank" class="btn-grad">Book via Topmate</a>
+      <p style="font-size:.8rem;color:var(--muted);margin-top:.25rem">— Aditi Jain, Psychologist</p>
+    </div>
+    <div class="closing-accent"></div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Aditi Jain · Psychologist · All rights reserved</p>
-  <div class="footer-links">
-    <a href="#" onclick="showPage('home'); return false;">Home</a>
-    <a href="#" onclick="showPage('blog'); return false;">Blog</a>
-    <a href="#about" onclick="showPage('home'); setTimeout(()=>document.getElementById('faq').scrollIntoView({behavior:'smooth'}),100); return false;">FAQ</a>
-    <a href="https://topmate.io" target="_blank">Book a Session</a>
-  </div>
+  <p>© 2025 Aditi Jain · Psychologist &nbsp;|&nbsp; <a href="https://topmate.io/" target="_blank">Book a session</a> &nbsp;|&nbsp; <a href="https://medium.com/" target="_blank">Medium</a> &nbsp;|&nbsp; <a href="https://myndstories.com/" target="_blank">Myndstories</a></p>
+  <p style="opacity:.7">This website is for informational purposes only and does not constitute a therapeutic relationship.</p>
 </footer>
 
-</div><!-- end page-home -->
-
-
-<!-- ==================== BLOG PAGE ==================== -->
-<div id="page-blog" class="page">
-
-<div class="blog-hero">
-  <p class="section-label" style="justify-content:center;display:flex;align-items:center;gap:6px;">From Aditi's Desk</p>
-  <h1>Gentle Reads for<br><em>Curious Minds</em></h1>
-  <p>Evidence-informed writing on mental health, grounding, emotional wellbeing, and the quiet work of healing.</p>
-</div>
-
-<div class="blog-page">
-  <div class="blog-grid">
-
-    <div class="blog-card" onclick="showArticle('5-4-3-2-1')">
-      <div class="blog-card-thumb thumb-lavender">🌿</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Grounding</span>
-        <div class="blog-card-title">The 5-4-3-2-1 Technique: A Complete Guide to Sensory Grounding</div>
-        <p class="blog-card-excerpt">When anxiety takes hold, our minds race forward into catastrophe. This simple, science-backed practice brings you back — right here, right now.</p>
-        <div class="blog-card-footer">
-          <span class="blog-read-time">6 min read</span>
-          <a href="#" class="blog-read-link" onclick="showArticle('5-4-3-2-1'); return false;">Read more →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="blog-card" onclick="showArticle('box-breathing')">
-      <div class="blog-card-thumb thumb-rose">🌬️</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Breathwork</span>
-        <div class="blog-card-title">Box Breathing: How 16 Seconds Can Calm Your Nervous System</div>
-        <p class="blog-card-excerpt">Used by Navy SEALs and recommended by therapists, box breathing is one of the most powerful — and accessible — tools for emotional regulation.</p>
-        <div class="blog-card-footer">
-          <span class="blog-read-time">5 min read</span>
-          <a href="#" class="blog-read-link" onclick="showArticle('box-breathing'); return false;">Read more →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="blog-card" onclick="showArticle('anxiety-vs-fear')">
-      <div class="blog-card-thumb thumb-sage">🌱</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Understanding Anxiety</span>
-        <div class="blog-card-title">Anxiety vs. Fear: Understanding the Difference and Why It Matters</div>
-        <p class="blog-card-excerpt">Fear and anxiety feel similar but are fundamentally different. Understanding this distinction is often the first step toward working with them more skillfully.</p>
-        <div class="blog-card-footer">
-          <span class="blog-read-time">7 min read</span>
-          <a href="#" class="blog-read-link" onclick="showArticle('anxiety-vs-fear'); return false;">Read more →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="blog-card" onclick="showArticle('safe-place')">
-      <div class="blog-card-thumb thumb-peach">🌸</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Visualisation</span>
-        <div class="blog-card-title">How to Build Your Safe Place: A Guided Visualisation for Anxiety</div>
-        <p class="blog-card-excerpt">Your nervous system can't always tell the difference between imagination and reality — which means a safe place you create in your mind is genuinely soothing.</p>
-        <div class="blog-card-footer">
-          <span class="blog-read-time">8 min read</span>
-          <a href="#" class="blog-read-link" onclick="showArticle('safe-place'); return false;">Read more →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="blog-card" onclick="showArticle('therapy-myths')">
-      <div class="blog-card-thumb thumb-amber">💬</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Starting Therapy</span>
-        <div class="blog-card-title">5 Myths About Therapy That Stop People from Getting Help</div>
-        <p class="blog-card-excerpt">From "I'm not sick enough" to "therapy is just talking about your childhood," these common beliefs often keep people from the support they genuinely need.</p>
-        <div class="blog-card-footer">
-          <span class="blog-read-time">6 min read</span>
-          <a href="#" class="blog-read-link" onclick="showArticle('therapy-myths'); return false;">Read more →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="blog-card" onclick="showArticle('nervous-system')">
-      <div class="blog-card-thumb thumb-lavender">🫀</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Nervous System</span>
-        <div class="blog-card-title">What Is Your Window of Tolerance — and Why Does It Matter?</div>
-        <p class="blog-card-excerpt">Understanding the window of tolerance is one of the most practical things you can do for your mental health. Here's what it means and how to widen yours over time.</p>
-        <div class="blog-card-footer">
-          <span class="blog-read-time">9 min read</span>
-          <a href="#" class="blog-read-link" onclick="showArticle('nervous-system'); return false;">Read more →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<footer>
-  <p>© 2025 Aditi Jain · Psychologist · All rights reserved</p>
-  <div class="footer-links">
-    <a href="#" onclick="showPage('home'); return false;">← Back to Home</a>
-    <a href="https://topmate.io" target="_blank">Book a Session</a>
-  </div>
-</footer>
-
-</div><!-- end page-blog -->
-
-
-<!-- ==================== ARTICLE PAGES ==================== -->
-<div id="page-article" class="page">
-
-  <div class="article-back">
-    <button class="back-btn" onclick="showPage('blog')">← Back to Blog</button>
-  </div>
-  <div class="article-body" id="article-content"></div>
-
-  <footer>
-    <p>© 2025 Aditi Jain · Psychologist · All rights reserved</p>
-    <div class="footer-links">
-      <a href="#" onclick="showPage('blog'); return false;">← All posts</a>
-      <a href="https://topmate.io" target="_blank">Book a Session</a>
-    </div>
-  </footer>
-
-</div><!-- end page-article -->
-
-
-<!-- ==================== SCRIPTS ==================== -->
 <script>
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mob');
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
 
-// ---- Page Navigation ----
-function showPage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  window.scrollTo(0, 0);
-  // Re-trigger reveal animations on blog page
-  if (page === 'blog') {
-    setTimeout(() => {
-      document.querySelectorAll('#page-blog .blog-card').forEach((el, i) => {
-        setTimeout(() => el.classList.add('visible'), i * 80);
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const body = item.querySelector('.faq-body');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-body').style.maxHeight = '0';
       });
-    }, 100);
-  }
-}
-
-// ---- Hamburger Menu ----
-function toggleMenu() {
-  document.getElementById('nav-links').classList.toggle('open');
-}
-
-// ---- Nav scroll shadow ----
-window.addEventListener('scroll', () => {
-  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
-});
-
-// ---- FAQ Accordion ----
-function toggleFAQ(btn) {
-  const item = btn.closest('.faq-item');
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-
-// ---- Intersection Observer ----
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
+      if (!isOpen) {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
   });
-}, { threshold: 0.1 });
 
-document.querySelectorAll('.reveal, .highlight-card, .approach-card, .testimonial-card, .grounding-card').forEach((el, i) => {
-  observer.observe(el);
-});
-document.querySelectorAll('.highlight-card').forEach((card, i) => {
-  card.style.transitionDelay = (i * 0.12) + 's';
-});
-
-// ---- Article Content ----
-const articles = {
-  '5-4-3-2-1': `
-    <span class="article-tag">Grounding</span>
-    <h1 class="article-title">The 5-4-3-2-1 Technique: A Complete Guide to Sensory Grounding</h1>
-    <div class="article-meta">
-      <div class="article-author-avatar">A</div>
-      <div class="article-meta-text">
-        <strong>Aditi Jain</strong>
-        Psychologist · 6 min read
-      </div>
-    </div>
-    <div class="article-content">
-      <p>When anxiety tightens its grip, the mind tends to flee the present — racing into imagined futures, replaying past hurts, or spiralling through worst-case scenarios. The 5-4-3-2-1 grounding technique works by doing the opposite: it brings your awareness, gently but firmly, back to right here.</p>
-      <div class="article-callout"><p>"Grounding isn't about stopping your thoughts. It's about giving your nervous system something real and sensory to land on."</p></div>
-      <h2>What is the 5-4-3-2-1 technique?</h2>
-      <p>The 5-4-3-2-1 method is a mindfulness-based sensory grounding exercise. It works by engaging five of your senses in sequence, deliberately directing your attention away from anxious thought patterns and toward your immediate physical environment.</p>
-      <p>It's one of the most widely recommended tools in trauma-informed therapy because it's simple, portable, and doesn't require any prior meditation experience.</p>
-      <h2>How to practise it: step by step</h2>
-      <div class="technique-step">
-        <div class="step-num">5</div>
-        <div class="step-content">
-          <strong>Things you can SEE</strong>
-          <p>Look around slowly. Name five things you can see — they can be ordinary: a crack in the wall, a cup on the desk, the pattern on your curtains. Describe them silently or aloud.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <strong>Things you can TOUCH</strong>
-          <p>Notice four things you can physically feel right now — your feet on the floor, the fabric of your clothes, the temperature of air on your skin.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <strong>Things you can HEAR</strong>
-          <p>Listen for three sounds. They might be nearby or distant — traffic, birdsong, the hum of a fan, someone breathing.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <strong>Things you can SMELL</strong>
-          <p>Identify two scents — even subtle ones. If you can't smell anything obvious, consider fetching something scented: tea, a candle, even your own wrist.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <strong>Thing you can TASTE</strong>
-          <p>Name one thing you can taste. It might be the lingering taste of your last meal, or you can take a sip of water and notice it mindfully.</p>
-        </div>
-      </div>
-      <h2>Why does it work?</h2>
-      <p>When we experience anxiety or distress, the amygdala — the brain's threat-detection centre — becomes hyperactive. It signals the body to prepare for danger. Sensory grounding techniques like 5-4-3-2-1 work by activating the prefrontal cortex (the thinking, reasoning part of the brain), which communicates to the amygdala that the present moment is safe.</p>
-      <p>In short: when you engage your senses deliberately, you're sending your nervous system a quiet message — <em>you are here, and you are okay.</em></p>
-      <h2>When to use it</h2>
-      <p>This technique is particularly helpful during panic attacks, moments of dissociation, intrusive thoughts, or when you feel overwhelmed and need to return to the present. It can also be used preventatively — as a daily practice to strengthen your connection to the present moment.</p>
-      <div class="article-callout"><p>"You don't need to be in crisis to use grounding techniques. Using them in calm moments actually makes them more effective when you need them most."</p></div>
-      <h2>A note from me</h2>
-      <p>Grounding techniques are wonderful tools, but they work best when combined with deeper therapeutic work that addresses the root causes of anxiety and overwhelm. If you find yourself needing to ground frequently, it might be worth exploring what's underneath with a therapist you trust.</p>
-      <p>If you'd like to explore that work together, I'd love to hear from you.</p>
-    </div>
-  `,
-  'box-breathing': `
-    <span class="article-tag">Breathwork</span>
-    <h1 class="article-title">Box Breathing: How 16 Seconds Can Calm Your Nervous System</h1>
-    <div class="article-meta">
-      <div class="article-author-avatar">A</div>
-      <div class="article-meta-text">
-        <strong>Aditi Jain</strong>
-        Psychologist · 5 min read
-      </div>
-    </div>
-    <div class="article-content">
-      <p>Your breath is the one bodily function that is both automatic and under conscious control. This makes it a uniquely powerful lever for calming the nervous system — and box breathing, also called square breathing, is one of the most effective ways to use it.</p>
-      <div class="article-callout"><p>"The breath is a bridge between the unconscious and the conscious. Learning to work with it is one of the most accessible forms of self-regulation available to us."</p></div>
-      <h2>What is box breathing?</h2>
-      <p>Box breathing is a structured breathing technique that involves equal counts of inhaling, holding, exhaling, and holding again — each for four seconds. The "box" refers to the four equal sides of this cycle. It's used by athletes, military personnel, therapists, and meditators worldwide.</p>
-      <h2>The science behind it</h2>
-      <p>When you exhale slowly, you activate the vagus nerve — the longest cranial nerve in the body, which runs from the brain to the abdomen. Stimulating the vagus nerve triggers the parasympathetic nervous system: your "rest and digest" mode. This is the opposite of the fight-or-flight response.</p>
-      <p>The deliberate hold at the end of each exhale also allows carbon dioxide levels to balance, which reduces the lightheadedness and racing heart often associated with anxiety-driven shallow breathing.</p>
-      <h2>How to practise box breathing</h2>
-      <div class="technique-step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <strong>Find a comfortable position</strong>
-          <p>Sit upright if possible, with your feet on the floor. Place one hand on your abdomen to feel the breath moving.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <strong>Inhale for 4 counts</strong>
-          <p>Breathe in slowly through your nose, counting silently to four. Feel your belly expand.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <strong>Hold for 4 counts</strong>
-          <p>Hold the breath gently — not straining. Simply pause at the top.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <strong>Exhale for 4 counts</strong>
-          <p>Breathe out slowly through your mouth, feeling the belly fall. Let go completely.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">5</div>
-        <div class="step-content">
-          <strong>Hold for 4 counts</strong>
-          <p>Pause at the bottom of the exhale before beginning the next cycle. Repeat 4–6 times.</p>
-        </div>
-      </div>
-      <h2>Tips for getting started</h2>
-      <ul>
-        <li>Start with just 4 cycles and gradually extend your practice.</li>
-        <li>If 4 counts feels too long, try 3 counts until it feels natural.</li>
-        <li>Practise when you're calm so that it becomes easier to access in moments of distress.</li>
-        <li>Some people find it helpful to visualise tracing the four sides of a box as they breathe.</li>
-      </ul>
-      <h2>A gentle reminder</h2>
-      <p>Breathwork is a powerful support, but if you find your anxiety is persistent, pervasive, or affecting your daily life, it's worth exploring what's beneath the surface. These techniques are wonderful companions to therapy — not replacements for it.</p>
-    </div>
-  `,
-  'anxiety-vs-fear': `
-    <span class="article-tag">Understanding Anxiety</span>
-    <h1 class="article-title">Anxiety vs. Fear: Understanding the Difference and Why It Matters</h1>
-    <div class="article-meta">
-      <div class="article-author-avatar">A</div>
-      <div class="article-meta-text">
-        <strong>Aditi Jain</strong>
-        Psychologist · 7 min read
-      </div>
-    </div>
-    <div class="article-content">
-      <p>Most people use "anxiety" and "fear" interchangeably. But in psychology, they refer to distinct experiences — and understanding the difference can be the beginning of a very different relationship with both.</p>
-      <h2>Fear: a response to something real and present</h2>
-      <p>Fear is a direct, immediate emotional and physiological response to a concrete, identifiable threat. If a dog lunges at you, you feel fear. It's tied to the present moment: something is happening right now that could harm you. Fear is adaptive — it helps us survive.</p>
-      <p>Once the threat passes, fear subsides. The nervous system returns to baseline. That's the key: fear has a clear beginning and end.</p>
-      <h2>Anxiety: a response to possibility</h2>
-      <p>Anxiety, on the other hand, is oriented toward the <em>future</em>. It's a state of apprehension about what might happen. The threat is uncertain, unclear, or imagined — not directly present. Anxiety can arise even in complete physical safety.</p>
-      <p>This is why anxiety is so difficult to simply "logic away." The threat isn't something you can look at and verify. It lives in the what-ifs.</p>
-      <div class="article-callout"><p>"Anxiety asks you to prepare for a future that hasn't happened yet. The work is learning to stay, with kindness, in the present that has."</p></div>
-      <h2>Why does this distinction matter?</h2>
-      <p>When we treat anxiety like fear — as though there is a specific, present danger to be avoided or escaped — we often make it worse. Avoidance relieves anxiety in the short term but teaches the nervous system that the situation truly was dangerous. Over time, the "threat zone" expands.</p>
-      <p>Understanding anxiety as a future-oriented state opens up different possibilities: working with the thoughts driving it, exploring what needs and fears lie underneath, and gently building tolerance for uncertainty.</p>
-      <h2>Physical symptoms: similar but different</h2>
-      <p>Both fear and anxiety activate the sympathetic nervous system — the fight-or-flight response. You may experience racing heart, shallow breathing, muscle tension, and heightened alertness in both. However, fear symptoms are typically more intense and short-lived; anxiety can produce a lower-level but chronic activation that wears on the body over time.</p>
-      <h2>Working with anxiety in therapy</h2>
-      <p>In therapy, we often explore the specific thoughts and stories that feed anxiety — what the future catastrophe is, what it would mean, where these fears come from. We also work on building present-moment awareness and nervous system regulation. Understanding anxiety doesn't make it disappear, but it changes the relationship you have with it.</p>
-      <p>And often, that change is everything.</p>
-    </div>
-  `,
-  'safe-place': `
-    <span class="article-tag">Visualisation</span>
-    <h1 class="article-title">How to Build Your Safe Place: A Guided Visualisation for Anxiety</h1>
-    <div class="article-meta">
-      <div class="article-author-avatar">A</div>
-      <div class="article-meta-text">
-        <strong>Aditi Jain</strong>
-        Psychologist · 8 min read
-      </div>
-    </div>
-    <div class="article-content">
-      <p>There is a beautiful and strange truth about the human brain: it can't always tell the difference between something we're vividly imagining and something that is actually happening. This is why a frightening dream can make your heart race, and why a vivid memory can bring tears to your eyes.</p>
-      <p>Safe place visualisation uses this same principle — deliberately, and in your favour.</p>
-      <div class="article-callout"><p>"Your imagination is not an escape from reality. It is a doorway to a different quality of experience — one your nervous system can actually inhabit."</p></div>
-      <h2>What is safe place visualisation?</h2>
-      <p>Safe place visualisation is a guided imagery technique used in trauma therapy, EMDR, CBT, and mindfulness-based practices. It involves mentally constructing a place — real or imagined — where you feel completely safe, calm, and at ease. Over time, the mind and body begin to associate this inner landscape with a felt sense of safety.</p>
-      <h2>Before you begin</h2>
-      <p>Find a quiet, comfortable spot. You might sit or lie down. Allow 5–10 minutes. If possible, close your eyes — but if that feels uncomfortable, a soft downward gaze works just as well.</p>
-      <h2>The guided practice</h2>
-      <div class="technique-step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <strong>Begin with the breath</strong>
-          <p>Take three slow, deep breaths. With each exhale, allow your body to soften slightly.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <strong>Invite your safe place to appear</strong>
-          <p>Let your mind drift toward a place where you feel safe, calm, or peaceful. It might be a real memory — a childhood garden, a beach at dawn — or somewhere entirely imagined. There is no right answer.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <strong>Engage your senses</strong>
-          <p>What do you see there? What sounds are present? What does the air feel like against your skin? Is there a scent? Take time with each sense, making the image richer and more vivid.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <strong>Notice how your body feels</strong>
-          <p>As you settle into this place, notice what shifts in your body. Perhaps your shoulders drop, your breathing deepens, your jaw unclenches. Spend time here.</p>
-        </div>
-      </div>
-      <div class="technique-step">
-        <div class="step-num">5</div>
-        <div class="step-content">
-          <strong>Give it a name or an anchor</strong>
-          <p>Before you leave, choose a word or gesture that represents this feeling of safety — a word like "still," or the sensation of pressing a hand to your heart. This becomes an anchor you can return to quickly.</p>
-        </div>
-      </div>
-      <h2>Building the practice over time</h2>
-      <p>Like any skill, safe place visualisation deepens with practice. The more you visit this inner landscape in quiet moments, the more accessible it becomes when you truly need it. Some people find it helpful to journal about their safe place after each session — noting what details emerged and how their body responded.</p>
-      <p>If you find that anxiety or traumatic memories intrude during the visualisation, please be gentle with yourself. This can be a sign that deeper therapeutic support may be helpful.</p>
-    </div>
-  `,
-  'therapy-myths': `
-    <span class="article-tag">Starting Therapy</span>
-    <h1 class="article-title">5 Myths About Therapy That Stop People from Getting Help</h1>
-    <div class="article-meta">
-      <div class="article-author-avatar">A</div>
-      <div class="article-meta-text">
-        <strong>Aditi Jain</strong>
-        Psychologist · 6 min read
-      </div>
-    </div>
-    <div class="article-content">
-      <p>Many people who could genuinely benefit from therapy never make that first call. More often than not, it's not because help isn't available — it's because of ideas about what therapy is, who it's for, and what it means to need it.</p>
-      <p>Here are five of the most common myths I encounter, and what's actually true.</p>
-      <h2>Myth 1: "I'm not sick enough for therapy"</h2>
-      <p>This is perhaps the most common barrier. There is an idea that therapy is reserved for people in crisis — people with diagnoses, people at rock bottom. But therapy is for anyone who wants to understand themselves better, work through something difficult, or simply have a reflective space that's entirely their own.</p>
-      <p>You don't need a diagnosis. You don't need to be unable to function. You just need to want something to be different — or to want to understand what you're carrying.</p>
-      <h2>Myth 2: "Therapy is just talking about your childhood"</h2>
-      <p>Some therapy does explore early experiences — and for many people, that's genuinely useful. But modern therapy is varied, practical, and tailored to you. Depending on what you're working on, sessions might focus on the present, on patterns in current relationships, on building skills for emotional regulation, or on understanding your body's responses.</p>
-      <p>Good therapy meets you where you are.</p>
-      <h2>Myth 3: "Therapy means something is wrong with me"</h2>
-      <p>Seeking therapy is a sign of self-awareness and courage — not weakness or failure. We live in a culture that prizes stoic self-sufficiency, but the truth is that humans are relational beings who need connection, reflection, and support to thrive. Asking for help is, in many ways, one of the most mature things you can do.</p>
-      <div class="article-callout"><p>"Going to therapy doesn't mean you're broken. It means you're willing to look honestly at your life and take responsibility for your own wellbeing."</p></div>
-      <h2>Myth 4: "If I talk about my problems, I'll just feel worse"</h2>
-      <p>It's true that some sessions are uncomfortable — sitting with difficult feelings isn't easy. But in a safe therapeutic relationship, most people find that speaking the unspeakable is an enormous relief. What we resist and suppress tends to grow; what we name and feel tends to gradually lose its hold.</p>
-      <h2>Myth 5: "Therapy takes years and I don't have the time or money"</h2>
-      <p>Some people engage in long-term therapy; others find enormous benefit in a shorter, more focused period of work. Therapy is not a one-size-fits-all commitment. It's worth having an honest conversation with any therapist you consider about your practical constraints — a good therapist will work with you, not around you.</p>
-      <h2>If you've been on the fence</h2>
-      <p>I understand the hesitation. Taking the step toward therapy can feel vulnerable, especially when you're not quite sure what to expect. If you have questions before booking, I'm always happy to have a brief introductory conversation. There's no pressure — just the option.</p>
-    </div>
-  `,
-  'nervous-system': `
-    <span class="article-tag">Nervous System</span>
-    <h1 class="article-title">What Is Your Window of Tolerance — and Why Does It Matter?</h1>
-    <div class="article-meta">
-      <div class="article-author-avatar">A</div>
-      <div class="article-meta-text">
-        <strong>Aditi Jain</strong>
-        Psychologist · 9 min read
-      </div>
-    </div>
-    <div class="article-content">
-      <p>One of the most useful frameworks I introduce to clients is the concept of the "window of tolerance." Originally developed by Dr. Dan Siegel, it has become a cornerstone of trauma-informed therapy — and once you understand it, you start to see your own emotional responses very differently.</p>
-      <div class="article-callout"><p>"When we understand the nervous system's language, we stop fighting our reactions and start working with them."</p></div>
-      <h2>What is the window of tolerance?</h2>
-      <p>The window of tolerance refers to a zone of arousal in which we can function optimally. Within this window, we're able to think clearly, feel our emotions without being overwhelmed, stay present in relationships, and engage with challenges in a grounded way.</p>
-      <p>Think of it as the "Goldilocks zone" of your nervous system — not too activated, not too shut down. Just right.</p>
-      <h2>What happens outside the window</h2>
-      <p>When something stressful or threatening occurs, we may move outside our window in one of two directions:</p>
-      <h3>Hyperarousal (too activated)</h3>
-      <p>This looks like anxiety, panic, rage, hypervigilance, feeling overwhelmed or out of control. The nervous system is in fight-or-flight. Thinking becomes difficult; emotions feel enormous.</p>
-      <h3>Hypoarousal (too shut down)</h3>
-      <p>This looks like numbness, dissociation, depression, feeling disconnected or empty, difficulty speaking or moving. The nervous system has moved into freeze or collapse as a form of protection.</p>
-      <h2>Why trauma narrows the window</h2>
-      <p>One of the effects of trauma and chronic stress is that the window of tolerance narrows. Smaller triggers cause bigger reactions. Things that other people seem to handle easily can send us into hyperarousal or hypoarousal — and this can be confusing and shameful when we don't understand what's happening.</p>
-      <p>This is not a character flaw or a sign of weakness. It's a nervous system doing exactly what it learned to do to protect you.</p>
-      <h2>How therapy widens the window</h2>
-      <p>Much of trauma-informed therapy is, at its core, about gradually widening the window of tolerance — building the capacity to experience difficult emotions and states without being overwhelmed by them or shutting down entirely.</p>
-      <p>This happens through:</p>
-      <ul>
-        <li>Developing body-based awareness — noticing where emotions live in the body.</li>
-        <li>Learning regulation skills like breathwork, grounding, and titration (processing difficult material in small doses).</li>
-        <li>Building a safe therapeutic relationship in which it becomes possible to experience difficult feelings and not be alone in them.</li>
-        <li>Processing traumatic memories in a contained, paced way so they no longer trigger the same alarm response.</li>
-      </ul>
-      <h2>A final thought</h2>
-      <p>Knowing about the window of tolerance doesn't immediately make it wider. But it does something almost equally valuable: it helps you make sense of your own reactions with compassion rather than judgment. And that, I've found, is often where healing begins.</p>
-    </div>
-  `
-};
-
-function showArticle(id) {
-  const content = articles[id];
-  if (!content) return;
-  document.getElementById('article-content').innerHTML = content;
-  showPage('article');
-}
-
+  document.querySelectorAll('.faq-cat').forEach(cat => {
+    cat.addEventListener('click', () => {
+      document.querySelectorAll('.faq-cat').forEach(c => c.classList.remove('active'));
+      cat.classList.add('active');
+      const sel = cat.dataset.cat;
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-body').style.maxHeight = '0';
+      });
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.style.display = (sel === 'all' || item.dataset.cat === sel) ? 'block' : 'none';
+      });
+    });
+  });
 </script>
 </body>
 </html>
